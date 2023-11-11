@@ -1,22 +1,6 @@
+import model.ListNode;
+
 public class 两数相加 {
-    static class ListNode {
-        int val;
-        ListNode next;
-
-        ListNode() {
-        }
-
-        ListNode(int val) {
-            this.val = val;
-        }
-
-        ListNode(int val, ListNode next) {
-            this.val = val;
-            this.next = next;
-        }
-    }
-
-
     /**
      * 给你两个 非空 的链表，表示两个非负的整数。
      * 它们每位数字都是按照 逆序 的方式存储的，
@@ -29,53 +13,34 @@ public class 两数相加 {
      * @return {@link ListNode}
      */
     public ListNode addTwoNumbers(ListNode l1, ListNode l2) {
-        ListNode listNode = new ListNode(),head = listNode,parent = null;
-        int total=0,save=0;
-        while (l1!=null||l2!=null) {
-            if(l1!=null){
-                total+=l1.val;
+        ListNode listNode = new ListNode(), head = listNode, parent = null;
+        int total = 0, save = 0;
+        while (l1 != null || l2 != null) {
+            if (l1 != null) {
+                total += l1.val;
                 l1 = l1.next;
             }
-            if(l2!=null){
-                total+=l2.val;
+            if (l2 != null) {
+                total += l2.val;
                 l2 = l2.next;
             }
             listNode.val += total;
-            if(listNode.val > 9){
-                save =listNode.val /10;
+            if (listNode.val > 9) {
+                save = listNode.val / 10;
                 listNode.val %= 10;
             }
             listNode.next = new ListNode();
-            parent =listNode;
+            parent = listNode;
             listNode = listNode.next;
-            listNode.val +=save;
-            total = 0;save = 0;
+            listNode.val += save;
+            total = 0;
+            save = 0;
         }
-        if(listNode.val == 0) {
-            parent.next=null;
+        if (listNode.val == 0) {
+            parent.next = null;
         }
-        return  head;
+        return head;
     }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 }
