@@ -6,7 +6,7 @@ import java.util.HashMap;
  * @author 刘家辉
  * @date 2023/11/11
  */
-public class 两数之和 {
+public class a_两数之和 {
     /**
      * 给定一个整数数组 nums 和一个整数目标值 target，
      * 请你在该数组中找出 和为目标值 target  的那 两个 整数，并返回它们的数组下标。
