@@ -15,7 +15,6 @@ public class b_电话号码的组合 {
         if(digits.isEmpty()){
              return list;
          }
-        int index = digits.charAt(0) - 50;
         String[] str = {"abc","def","ghi","jkl","mno","pqrs","tuv","wxyz"};
         tool(list, str,"",digits);
         return list;
