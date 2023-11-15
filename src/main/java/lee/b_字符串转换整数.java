@@ -1,3 +1,5 @@
+package lee;
+
 public class b_字符串转换整数 {
     public static void main(String[] args) {
            myAtoi(" ");

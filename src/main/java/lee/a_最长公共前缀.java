@@ -1,3 +1,5 @@
+package lee;
+
 public class a_最长公共前缀 {
 
     /**

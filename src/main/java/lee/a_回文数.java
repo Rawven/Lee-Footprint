@@ -1,3 +1,5 @@
+package lee;
+
 public class a_回文数 {
     public static void main(String[] args) {
         isPalindrome(121);

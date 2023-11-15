@@ -1,3 +1,5 @@
+package lee;
+
 public class b_N字形变换 {
 
     public static void main(String[] args) {

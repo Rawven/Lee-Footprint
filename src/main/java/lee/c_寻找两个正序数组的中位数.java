@@ -1,3 +1,5 @@
+package lee;
+
 public class c_寻找两个正序数组的中位数 {
 
     /**

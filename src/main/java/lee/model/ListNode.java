@@ -1,4 +1,4 @@
-package model;
+package lee.model;
 
 public class ListNode {
     public int val;

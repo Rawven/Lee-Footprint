@@ -1,4 +1,7 @@
-import model.ListNode;
+package lee;
+
+
+import lee.model.ListNode;
 
 public class b_删除链表的倒数第n结点 {
     /**

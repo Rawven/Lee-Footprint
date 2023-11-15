@@ -1,4 +1,8 @@
-import model.ListNode;
+package lee;
+
+
+
+import lee.model.ListNode;
 
 import java.util.List;
 
