@@ -2,13 +2,13 @@ package lee;
 
 public class b_两数相除 {
     public static void main(String[] args) {
-        divide(-2147483648,1);
+        System.out.println(Integer.MIN_VALUE);
     }
 
 
     /**
      * divide
-     * 逆天负数运算 绝妙 位运算 牛逼
+     * 逆天负数运算 绝妙避开溢出问题 位运算 牛逼
      * @param dividend dividend
      * @param divisor  divisor
      * @return int
@@ -26,6 +26,7 @@ public class b_两数相除 {
             int temp_result = -1;
             int temp_divisor = divisor;
             while (dividend <= temp_divisor <<1 ){
+                //TODO 在这种情况下再进位则会溢出 暂停
                 if(temp_divisor <= Integer.MIN_VALUE >>1) {
                     break;
                 }
@@ -35,9 +36,11 @@ public class b_两数相除 {
             dividend -= temp_divisor;
             result += temp_result;
         }
+        //除数与被除数同正负性
         if(!bool){
-            if( result <=Integer.MIN_VALUE){
-                return Integer.MIN_VALUE;
+            //TODO 因为转换为负数 所以若达到MIN 应该转为MAX吧
+            if(result == Integer.MIN_VALUE){
+                return Integer.MAX_VALUE;
             }
             result = -result;
         }
