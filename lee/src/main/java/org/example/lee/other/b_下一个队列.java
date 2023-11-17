@@ -1,4 +1,4 @@
-package org.example.lee;
+package org.example.lee.other;
 
 import java.lang.reflect.Array;
 import java.util.Arrays;
