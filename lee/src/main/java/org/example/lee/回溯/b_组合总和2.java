@@ -7,7 +7,6 @@ import java.util.List;
 
 /**
  * b 组合总和2
- *
  * @author 刘家辉
  * @date 2023/11/29
  */
@@ -18,7 +17,6 @@ public class b_组合总和2 {
      * candidates 中的每个数字在每个组合中只能使用 一次 。
      * 注意：解集不能包含重复的组合。
      * combination sum2
-     *
      * @param candidates candidates
      * @param target     target
      * @return {@link List}<{@link List}<{@link Integer}>>
