@@ -1,7 +1,7 @@
 package org.example.lee.题目.双指针;
 
 
-import org.example.lee.题目.model.ListNode;
+import org.example.lee.model.ListNode;
 
 public class b_删除链表的倒数第n结点 {
     /**

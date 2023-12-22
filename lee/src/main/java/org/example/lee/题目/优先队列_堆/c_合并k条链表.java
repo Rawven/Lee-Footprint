@@ -1,6 +1,6 @@
 package org.example.lee.题目.优先队列_堆;
 
-import org.example.lee.题目.model.ListNode;
+import org.example.lee.model.ListNode;
 
 import java.util.Comparator;
 import java.util.PriorityQueue;

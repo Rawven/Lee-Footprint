@@ -1,6 +1,6 @@
 package org.example.lee.题目.递归;
 
-import org.example.lee.题目.model.ListNode;
+import org.example.lee.model.ListNode;
 
 public class c_k个一组翻转链表 {
 

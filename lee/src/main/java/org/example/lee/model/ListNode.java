@@ -1,4 +1,4 @@
-package org.example.lee.题目.model;
+package org.example.lee.model;
 
 public class ListNode {
     public int val;

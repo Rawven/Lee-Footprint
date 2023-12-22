@@ -1,7 +1,7 @@
 package org.example.lee.题目.other;
 
 
-import org.example.lee.题目.model.ListNode;
+import org.example.lee.model.ListNode;
 
 public class b_两数相加 {
     /**

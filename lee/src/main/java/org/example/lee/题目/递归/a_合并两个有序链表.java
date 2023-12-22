@@ -2,7 +2,7 @@ package org.example.lee.题目.递归;
 
 
 
-import org.example.lee.题目.model.ListNode;
+import org.example.lee.model.ListNode;
 
 public class a_合并两个有序链表 {
 

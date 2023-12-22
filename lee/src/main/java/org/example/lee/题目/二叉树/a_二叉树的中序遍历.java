@@ -1,6 +1,6 @@
 package org.example.lee.题目.二叉树;
 
-import org.example.lee.题目.model.TreeNode;
+import org.example.lee.model.TreeNode;
 
 import java.util.ArrayList;
 import java.util.List;

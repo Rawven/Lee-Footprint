@@ -1,6 +1,6 @@
 package org.example.lee.题目.other;
 
-import org.example.lee.题目.model.ListNode;
+import org.example.lee.model.ListNode;
 
 public class b_两两交换链表种的节点 {
 
