@@ -30,7 +30,7 @@
 
 传输层只需要实现应用到应用的通信，真正的传输功能交给网络层。
 
-![](../image/%E7%BD%91%E7%BB%9C%E5%B1%82.webp)
+![](./image/%E7%BD%91%E7%BB%9C%E5%B1%82.webp)
 
 ##### IP协议 Internet Protocol
 
