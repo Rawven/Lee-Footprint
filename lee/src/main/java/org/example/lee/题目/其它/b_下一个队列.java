@@ -1,6 +1,5 @@
-package org.example.lee.题目.other;
+package org.example.lee.题目.其它;
 
-import java.lang.reflect.Array;
 import java.util.Arrays;
 
 public class b_下一个队列 {

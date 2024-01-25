@@ -1,4 +1,4 @@
-package org.example.lee.题目.other;
+package org.example.lee.题目.其它;
 
 public class b_字符串转换整数 {
     public static void main(String[] args) {

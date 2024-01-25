@@ -1,4 +1,4 @@
-package org.example.lee.题目.other;
+package org.example.lee.题目.其它;
 
 public class a_找出字符串中第一个匹配项的下标 {
 

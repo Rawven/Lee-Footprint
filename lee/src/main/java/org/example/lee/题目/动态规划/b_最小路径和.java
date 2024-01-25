@@ -1,9 +1,9 @@
-package org.example.lee.题目.dp;
+package org.example.lee.题目.动态规划;
 
 public class b_最小路径和 {
 
     /**
-     *  dp[i]
+     *  动态规划[i]
      * @param obstacleGrid
      * @return
      */

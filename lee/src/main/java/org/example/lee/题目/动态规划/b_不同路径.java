@@ -1,4 +1,4 @@
-package org.example.lee.题目.dp;
+package org.example.lee.题目.动态规划;
 
 public class b_不同路径 {
 
