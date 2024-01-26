@@ -42,7 +42,7 @@ public class 快速排序 {
             while (i < j && nums[i] <= nums[left]) {
                 i++;
             }
-             t = nums[i];
+            t = nums[i];
             nums[i] = nums[j];
             nums[j] = t;
         }

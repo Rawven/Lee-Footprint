@@ -10,6 +10,7 @@ public class c_正则表达式匹配 {
      *                   2. f[i][j-2]              s[i]!= p[j-1]
      *   2.if(p[j] != *) 1. f[i−1][j−1]         s[i] = p[j]
      *                   2. false
+     *
      * @param s s
      * @param p p
      * @return boolean

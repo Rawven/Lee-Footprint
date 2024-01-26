@@ -5,7 +5,7 @@ public class b_整数转罗马数字 {
 
     /**
      * 罗马数字包含以下七种字符： I， V， X， L，C，D 和 M。
-     *
+     * <p>
      * 字符          数值
      * I             1
      * V             5
@@ -21,24 +21,25 @@ public class b_整数转罗马数字 {
      * X 可以放在 L (50) 和 C (100) 的左边，来表示 40 和 90。
      * C 可以放在 D (500) 和 M (1000) 的左边，来表示 400 和 900。
      * int to roman
-     *boring
+     * boring
+     *
      * @param num num
      * @return {@link String}
      */
     public static String intToRoman(int num) {
         Character roma[] = new Character[]{'I', 'V', 'X', 'L', 'C', 'D', 'M'};
         StringBuilder stringBuilder = new StringBuilder();
-        int test = 0, a = 1000,index=6;
+        int test = 0, a = 1000, index = 6;
         while (index >= 0) {
             test = num;
             test /= a;
             num %= a;
             //TODO 这个if语句看题目要求加
-            if(index < roma.length) {
+            if (index < roma.length) {
                 if (test == 9 || test == 4) {
-                    stringBuilder.append(roma[index]).append(roma[index + 1+test%2]);
-                } else{
-                    if(test >4) {
+                    stringBuilder.append(roma[index]).append(roma[index + 1 + test % 2]);
+                } else {
+                    if (test > 4) {
                         stringBuilder.append(roma[index + 1]);
                         test -= 5;
                     }
@@ -47,8 +48,8 @@ public class b_整数转罗马数字 {
                         test--;
                     }
                 }
-                a/=10;
-                index-=2;
+                a /= 10;
+                index -= 2;
             }
         }
         return stringBuilder.toString();

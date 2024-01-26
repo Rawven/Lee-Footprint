@@ -9,19 +9,20 @@ public class b_盛最多水的容器 {
      * 找出其中的两条线，使得它们与 x 轴共同构成的容器可以容纳最多的水。
      * 返回容器可以储存的最大水量。
      * max area
-     *贪心算法 找局部最优解 关键：移动高板一定变小 要去找这个关键点
+     * 贪心算法 找局部最优解 关键：移动高板一定变小 要去找这个关键点
+     *
      * @param height height
      * @return int
      */
     public static int maxArea(int[] height) {
-        int len = height.length, left=0,right = len-1,max=right*Math.min(height[left],height[right]);
-        while (left<right) {
-            if(height[left]>height[right]){
+        int len = height.length, left = 0, right = len - 1, max = right * Math.min(height[left], height[right]);
+        while (left < right) {
+            if (height[left] > height[right]) {
                 right--;
-            }else {
+            } else {
                 left++;
             }
-            max = Math.max((right-left)*Math.min(height[left],height[right]),max);
+            max = Math.max((right - left) * Math.min(height[left], height[right]), max);
         }
         return max;
     }

@@ -10,7 +10,6 @@ public class b_外观数列 {
 
 
     /**
-     *
      * 给定一个正整数 n ，输出外观数列的第 n 项。
      * 「外观数列」是一个整数序列，从数字 1 开始，序列中的每一项都是对前一项的描述。
      * 你可以将其视作是由递归公式定义的数字字符串序列：
@@ -35,19 +34,19 @@ public class b_外观数列 {
     public static String countAndSay(int n) {
         String num = "1";
         StringBuilder stringBuilder = new StringBuilder();
-        int index=0,toolH = 0;
-        while (n>1){
-            while (index < num.length()){
+        int index = 0, toolH = 0;
+        while (n > 1) {
+            while (index < num.length()) {
                 char c = num.charAt(index);
                 do {
                     toolH++;
                     index++;
                 } while (index < num.length() && num.charAt(index) == c);
                 stringBuilder.append(toolH).append(c);
-                toolH=0;
+                toolH = 0;
             }
-            num =stringBuilder.toString();
-            index=0;
+            num = stringBuilder.toString();
+            index = 0;
             stringBuilder = new StringBuilder();
             n--;
         }

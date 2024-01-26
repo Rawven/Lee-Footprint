@@ -1,9 +1,6 @@
 package org.example.lee.题目.区间;
 
 import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.Comparator;
-import java.util.List;
 
 public class b_插入区间 {
 
@@ -17,40 +14,40 @@ public class b_插入区间 {
      * @return {@link int[][]}
      */
     public int[][] insert(int[][] intervals, int[] newInterval) {
-        if(newInterval.length==0){
+        if (newInterval.length == 0) {
             return intervals;
         }
-        if(intervals.length ==0){
+        if (intervals.length == 0) {
             return new int[][]{newInterval};
         }
         ArrayList<int[]> arr = new ArrayList<>();
         int i;
-        for ( i = 0; i < intervals.length; i++) {
-            if(newInterval[0]>intervals[i][1]){
+        for (i = 0; i < intervals.length; i++) {
+            if (newInterval[0] > intervals[i][1]) {
                 arr.add(intervals[i]);
-            }else {
+            } else {
                 //实际上就是处理好插入 然后就按照合并区间做就行
-                if(newInterval[0]<intervals[i][0]) {
+                if (newInterval[0] < intervals[i][0]) {
                     arr.add(newInterval);
-                }else {
+                } else {
                     arr.add(intervals[i]);
-                    intervals[i]=newInterval;
+                    intervals[i] = newInterval;
                 }
                 for (; i < intervals.length; i++) {
-                    if( arr.get(arr.size()-1)[1]<intervals[i][0]){
+                    if (arr.get(arr.size() - 1)[1] < intervals[i][0]) {
                         arr.add(intervals[i]);
-                    }else {
-                        int[] a=arr.get(arr.size()-1);
-                        if(a[1]<intervals[i][1]){
-                            intervals[i][0]=a[0];
-                            arr.set(arr.size()-1,intervals[i]);
+                    } else {
+                        int[] a = arr.get(arr.size() - 1);
+                        if (a[1] < intervals[i][1]) {
+                            intervals[i][0] = a[0];
+                            arr.set(arr.size() - 1, intervals[i]);
                         }
                     }
                 }
                 return arr.toArray(new int[arr.size()][]);
             }
         }
-            arr.add(newInterval);
+        arr.add(newInterval);
         return arr.toArray(new int[arr.size()][]);
     }
 }

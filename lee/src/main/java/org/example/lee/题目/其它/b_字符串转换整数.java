@@ -2,7 +2,7 @@ package org.example.lee.题目.其它;
 
 public class b_字符串转换整数 {
     public static void main(String[] args) {
-           myAtoi(" ");
+        myAtoi(" ");
     }
 
     /**
@@ -15,42 +15,43 @@ public class b_字符串转换整数 {
      * 如果整数数超过 32 位有符号整数范围 [−231,  231 − 1] ，需要截断这个整数，使其保持在这个范围内。具体来说，小于 −231 的整数应该被固定为 −231 ，大于 231 − 1 的整数应该被固定为 231 − 1 。
      * 返回整数作为最终结果。
      * my atoi
-     *无聊的题目
+     * 无聊的题目
+     *
      * @param s s
      * @return int
      */
     public static int myAtoi(String s) {
-        int index = 0,isPositive=1,len = s.length();
-        long i =0;
+        int index = 0, isPositive = 1, len = s.length();
+        long i = 0;
         char c;
-        if(s.isEmpty()){
-          return 0;
+        if (s.isEmpty()) {
+            return 0;
         }
-        while (index<s.length() &&s.charAt(index)==' '){
-               index++;
+        while (index < s.length() && s.charAt(index) == ' ') {
+            index++;
         }
-        if(index == s.length()){
+        if (index == s.length()) {
             return 0;
         }
         c = s.charAt(index);
         if (c == '-' || c == '+') {
-            if(c == '-') {
+            if (c == '-') {
                 isPositive = -1;
             }
             index++;
         }
-        while (index<len && s.charAt(index) <= 57 && s.charAt(index)>=48
-        ){
-            i*=10;
+        while (index < len && s.charAt(index) <= 57 && s.charAt(index) >= 48
+        ) {
+            i *= 10;
             i += s.charAt(index) - 48;
-            if(isPositive*i > 2147483647 || isPositive*i < -2147483648){
-                if(isPositive*i>0) {
+            if (isPositive * i > 2147483647 || isPositive * i < -2147483648) {
+                if (isPositive * i > 0) {
                     return 2147483647;
                 }
                 return -2147483648;
             }
             index++;
         }
-        return (int)i*isPositive;
+        return (int) i * isPositive;
     }
 }

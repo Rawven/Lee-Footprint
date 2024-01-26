@@ -15,46 +15,49 @@ public class 堆 {
      *  ，右子节点索引为 2i+2
      *  ，父节点索引为(i-1)/2
      * （向下整除）。当索引越界时，表示空节点或节点不存在。
-    */
+     */
 
-    private int left (int i ){
-        return 2*i+1;
+    private int left(int i) {
+        return 2 * i + 1;
     }
 
-    private int right (int i ){
-        return 2*i+2;
+    private int right(int i) {
+        return 2 * i + 2;
     }
-    private int parent(int i){
-        return (i-1)/2;
+
+    private int parent(int i) {
+        return (i - 1) / 2;
     }
-     private void swap (int i ,int j){
+
+    private void swap(int i, int j) {
         int t = maxHeap.get(i);
-        maxHeap.set(i,maxHeap.get(j));
-        maxHeap.set(j,t);
-     }
-    public int peek(){
+        maxHeap.set(i, maxHeap.get(j));
+        maxHeap.set(j, t);
+    }
+
+    public int peek() {
         return maxHeap.get(0);
     }
 
-    void  offer(int i){
+    void offer(int i) {
         maxHeap.add(i);
-        siftUp(maxHeap.size()-1);
+        siftUp(maxHeap.size() - 1);
     }
 
-    private void siftUp(int i){
-        while (true){
+    private void siftUp(int i) {
+        while (true) {
             // 获取节点i 的父节点
             int p = parent(i);
-            if(p<0 || maxHeap.get(i)<=maxHeap.get(p)){
+            if (p < 0 || maxHeap.get(i) <= maxHeap.get(p)) {
                 break;
             }
-            swap(i,p);
-            i = p ;
+            swap(i, p);
+            i = p;
         }
     }
 
-    public int pop(){
-        if(maxHeap.isEmpty()){
+    public int pop() {
+        if (maxHeap.isEmpty()) {
             throw new RuntimeException("dd");
         }
         // 交换根节点与最右叶节点（交换首元素与尾元素）
@@ -66,6 +69,7 @@ public class 堆 {
         // 返回堆顶元素
         return val;
     }
+
     /* 从节点 i 开始，从顶至底堆化 */
     private void siftDown(int i) {
         while (true) {
@@ -87,7 +91,6 @@ public class 堆 {
             i = ma;
         }
     }
-
 
 
 }

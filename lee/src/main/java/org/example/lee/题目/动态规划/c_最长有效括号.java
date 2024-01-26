@@ -21,20 +21,21 @@ public class c_最长有效括号 {
      *       3. s[i] == ')'，s[i-1] == ')'，s[i-动态规划[i-1]-1](边界: i-动态规划[i-1]-1>=0) == '('，动态规划[i] = 动态规划[i-1] + 2 + 动态规划[i-动态规划[i-1]-2](边界: i-动态规划[i-1]-2>=0)
      *     3. 初始状态：动态规划[0] = 0
      *     4. 返回值：max(动态规划[i])
+     *
      * @param s s
      * @return int
      */
     public int longestValidParentheses(String s) {
-         int max =0,len = s.length();
-         int dp[] = new int[len];
+        int max = 0, len = s.length();
+        int dp[] = new int[len];
         for (int i = 1; i < len; i++) {
-            if(s.charAt(i) == ')'){
-                if(s.charAt(i-1) == '('){
-                    dp[i] = (i>=2?dp[i-2]:0)+2;
-                } else if (i-dp[i-1]>0&&s.charAt(i-dp[i-1]-1) == '(') {
-                    dp[i] = dp[i-1] + ((i-dp[i-1]) >= 2?dp[i-dp[i-1]-2]:0)+2;
+            if (s.charAt(i) == ')') {
+                if (s.charAt(i - 1) == '(') {
+                    dp[i] = (i >= 2 ? dp[i - 2] : 0) + 2;
+                } else if (i - dp[i - 1] > 0 && s.charAt(i - dp[i - 1] - 1) == '(') {
+                    dp[i] = dp[i - 1] + ((i - dp[i - 1]) >= 2 ? dp[i - dp[i - 1] - 2] : 0) + 2;
                 }
-                max = Math.max(max,dp[i]);
+                max = Math.max(max, dp[i]);
             }
         }
         return max;

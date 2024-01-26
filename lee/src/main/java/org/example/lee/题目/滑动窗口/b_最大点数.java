@@ -9,27 +9,28 @@ public class b_最大点数 {
      * 给你一个整数数组 cardPoints 和整数 k，请你返回可以获得的最大点数。
      * max score
      * TODO 关键思想  可获得的最大点数 = 总数-滑动窗口的min
+     *
      * @param cardPoints card points
      * @param k          k
      * @return int
      */
     public int maxScore(int[] cardPoints, int k) {
-        int left=0,right=0,min=0,record=0,all=0,len = cardPoints.length;
-        while (right<len){
-            min+=cardPoints[right];
-            all+=cardPoints[right];
+        int left = 0, right = 0, min = 0, record = 0, all = 0, len = cardPoints.length;
+        while (right < len) {
+            min += cardPoints[right];
+            all += cardPoints[right];
             right++;
-            if(right>len-k){
-                min-=cardPoints[left];
+            if (right > len - k) {
+                min -= cardPoints[left];
                 left++;
-                if(min<record){
-                    record=min;
+                if (min < record) {
+                    record = min;
                 }
-            }else{
-                record=min;
+            } else {
+                record = min;
             }
 
         }
-        return all-record;
+        return all - record;
     }
 }

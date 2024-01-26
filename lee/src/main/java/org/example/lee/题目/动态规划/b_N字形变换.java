@@ -3,7 +3,7 @@ package org.example.lee.题目.动态规划;
 public class b_N字形变换 {
 
     public static void main(String[] args) {
-        convert("PAYPALISHIRING",3);
+        convert("PAYPALISHIRING", 3);
     }
 
     /**
@@ -11,21 +11,22 @@ public class b_N字形变换 {
      * 以从上往下、从左到右进行 Z 字形排列。
      * convert
      * 重在规律 一个周期 = 2numRows - 2
+     *
      * @param s       s
      * @param numRows num rows
      * @return {@link String}
      */
     public static String convert(String s, int numRows) {
-         int round = numRows*2-2 , len = s.length();
-         StringBuilder stringBuilder = new StringBuilder();
-         int index=0,save;
-        while (index<numRows){
+        int round = numRows * 2 - 2, len = s.length();
+        StringBuilder stringBuilder = new StringBuilder();
+        int index = 0, save;
+        while (index < numRows) {
             save = index;
-            while (save<len) {
+            while (save < len) {
                 stringBuilder.append(s.charAt(save));
-                if(index != 0 && index != numRows -1) {
+                if (index != 0 && index != numRows - 1) {
                     int check = save + round - 2 * (save % round);
-                    if(check<len){
+                    if (check < len) {
                         stringBuilder.append(s.charAt(check));
                     }
                 }
@@ -33,6 +34,6 @@ public class b_N字形变换 {
             }
             index++;
         }
-         return stringBuilder.toString();
+        return stringBuilder.toString();
     }
 }

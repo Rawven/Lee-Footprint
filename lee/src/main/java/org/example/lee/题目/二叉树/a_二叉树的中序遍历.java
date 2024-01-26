@@ -16,15 +16,16 @@ public class a_二叉树的中序遍历 {
 
     public List<Integer> inorderTraversal(TreeNode root) {
         ArrayList<Integer> list = new ArrayList<>();
-        tool(list,root);
+        tool(list, root);
         return list;
     }
-    public void tool(List<Integer> list,TreeNode root){
-          if(root == null){
-              return;
-          }
-          tool(list,root.left);
-          list.add(root.val);
-          tool(list,root.right);
+
+    public void tool(List<Integer> list, TreeNode root) {
+        if (root == null) {
+            return;
+        }
+        tool(list, root.left);
+        list.add(root.val);
+        tool(list, root.right);
     }
 }

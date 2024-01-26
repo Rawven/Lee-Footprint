@@ -17,8 +17,8 @@ public class b_不同路径2 {
                         dp[i][j] = dp[i + 1][j] + dp[i][j + 1];
                     }
                 } else {
-                        mS = i==m-1?0:1;
-                        nS = j == n - 1?0:1;
+                    mS = i == m - 1 ? 0 : 1;
+                    nS = j == n - 1 ? 0 : 1;
                 }
             }
         }

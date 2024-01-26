@@ -23,10 +23,10 @@ public class b_括号生成 {
             list.add(str);
             return;
         }
-        if(left<=right && left>0){
+        if (left <= right && left > 0) {
             tool(left - 1, right, list, str.concat("("));
         }
-        if(left < right){
+        if (left < right) {
             tool(left, right - 1, list, str.concat(")"));
         }
     }

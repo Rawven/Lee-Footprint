@@ -5,12 +5,13 @@ import org.example.lee.model.TreeNode;
 public class a_翻转二叉树 {
 
     public TreeNode invertTree(TreeNode root) {
-          tool(root);
-          return  root;
+        tool(root);
+        return root;
     }
-    void tool(TreeNode root){
-        if(root == null){
-          return;
+
+    void tool(TreeNode root) {
+        if (root == null) {
+            return;
         }
         TreeNode treeNode;
         treeNode = root.right;

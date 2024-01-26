@@ -1,22 +1,20 @@
 package org.example.lee.题目.分治;
 
 import org.example.lee.model.ListNode;
-import org.example.lee.model.ListNodeUtil;
-
-import java.util.List;
 
 public class b_排序链表 {
 
     public ListNode sortList(ListNode head) {
         return tool(head);
     }
-    ListNode tool(ListNode node){
-        int index=0;
-        if(node == null || node.next==null){
+
+    ListNode tool(ListNode node) {
+        int index = 0;
+        if (node == null || node.next == null) {
             return node;
         }
         //cut
-        ListNode fast=node,slow=node,save;
+        ListNode fast = node, slow = node, save;
         while (fast.next != null && fast.next.next != null) {
             slow = slow.next;
             fast = fast.next.next;
@@ -29,19 +27,19 @@ public class b_排序链表 {
         //merge
         ListNode head = new ListNode(0);
         ListNode save2 = head;
-        while (tool!=null&&tool1!=null){
-            if(tool.val< tool1.val){
+        while (tool != null && tool1 != null) {
+            if (tool.val < tool1.val) {
                 head.next = tool;
                 tool = tool.next;
-            }else {
+            } else {
                 head.next = tool1;
                 tool1 = tool1.next;
             }
             head = head.next;
         }
-        if(tool!=null){
+        if (tool != null) {
             head.next = tool;
-        }else {
+        } else {
             head.next = tool1;
         }
         return save2;

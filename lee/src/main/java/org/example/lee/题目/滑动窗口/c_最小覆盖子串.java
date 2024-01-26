@@ -1,6 +1,5 @@
 package org.example.lee.题目.滑动窗口;
 
-import java.util.Arrays;
 import java.util.HashMap;
 
 public class c_最小覆盖子串 {
@@ -26,46 +25,47 @@ public class c_最小覆盖子串 {
      * @return {@link String}
      */
     public static String minWindow(String s, String t) {
-        int [] tem = new int[t.length()];
+        int[] tem = new int[t.length()];
         HashMap<Object, Integer> map2 = new HashMap<>();
-        int left = 0,right =0,key=0,num=s.length()+1,a1=0,a2=0;int[] answer = new int[t.length()];
+        int left = 0, right = 0, key = 0, num = s.length() + 1, a1 = 0, a2 = 0;
+        int[] answer = new int[t.length()];
         //counter为计数器
         int counter = t.length();
-        for (int i =  0; i < t.length(); i++) {
-            if(!map2.containsKey(t.charAt(i))){
-                map2.put(t.charAt(i),key++);
+        for (int i = 0; i < t.length(); i++) {
+            if (!map2.containsKey(t.charAt(i))) {
+                map2.put(t.charAt(i), key++);
             }
             tem[map2.get(t.charAt(i))]++;
         }
 
-        while (right < s.length()){
+        while (right < s.length()) {
             char c = s.charAt(right);
-            if(map2.containsKey(c)){
+            if (map2.containsKey(c)) {
                 answer[map2.get(c)]++;
-                if(answer[map2.get(c)]<=tem[map2.get(c)]){
+                if (answer[map2.get(c)] <= tem[map2.get(c)]) {
                     counter--;
                 }
             }
             right++;
             //窗口已经包含所有字符 则进入while 吐出一个字符 则进入下一循环
-            while (counter == 0){
+            while (counter == 0) {
 
                 char c1 = s.charAt(left);
-                if(map2.containsKey(c1)){
+                if (map2.containsKey(c1)) {
                     answer[map2.get(c1)]--;
-                    if(answer[map2.get(c1)]<tem[map2.get(c1)]){
+                    if (answer[map2.get(c1)] < tem[map2.get(c1)]) {
                         counter++;
                     }
                 }
-                if(right-left<num){
-                    num = right-left;
-                    a1=left;
-                    a2=right;
+                if (right - left < num) {
+                    num = right - left;
+                    a1 = left;
+                    a2 = right;
                 }
                 left++;
             }
         }
-        return num == s.length()+1?"":s.substring(a1,a2);
+        return num == s.length() + 1 ? "" : s.substring(a1, a2);
     }
 
 

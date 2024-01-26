@@ -1,7 +1,6 @@
 package org.example.lee.题目.链表;
 
 import org.example.lee.model.ListNode;
-import org.example.lee.model.ListNodeUtil;
 
 public class b_反转链表2 {
 
@@ -9,12 +8,13 @@ public class b_反转链表2 {
     /**
      * reverse between
      * 反转链表+头尾处理
+     *
      * @param head  head
      * @param left  left
      * @param right right
      * @return {@link ListNode}
      */
-    public  ListNode reverseBetween(ListNode head, int left, int right) {
+    public ListNode reverseBetween(ListNode head, int left, int right) {
         if (head == null || head.next == null || left >= right) {
             return head;
         }

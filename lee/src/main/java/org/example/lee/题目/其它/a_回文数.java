@@ -11,22 +11,23 @@ public class a_回文数 {
      * 例如，121 是回文，而 123 不是。
      * is palindrome
      * 无聊的题
+     *
      * @param x x
      * @return boolean
      */
     public static boolean isPalindrome(int x) {
         int array[] = new int[10];
-        int right,left=0;
-        if(x>=0){
-            for ( right = 0; x!=0;right++){
-                array[right]=x%10;
-                x/=10;
+        int right, left = 0;
+        if (x >= 0) {
+            for (right = 0; x != 0; right++) {
+                array[right] = x % 10;
+                x /= 10;
             }
             right--;
-            while (left<right){
-                 if(array[left++]!=array[right--]){
-                     return false;
-                 }
+            while (left < right) {
+                if (array[left++] != array[right--]) {
+                    return false;
+                }
             }
             return true;
         }

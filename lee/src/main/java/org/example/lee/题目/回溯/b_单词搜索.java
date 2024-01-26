@@ -4,33 +4,33 @@ public class b_单词搜索 {
 
 
     public static void main(String[] args) {
-           exist(new char[][]{{'A','B','C','E'},{'S','F','C','S'},{'A','D','E','E'}},"ABCCED" );
+        exist(new char[][]{{'A', 'B', 'C', 'E'}, {'S', 'F', 'C', 'S'}, {'A', 'D', 'E', 'E'}}, "ABCCED");
     }
 
     public static boolean exist(char[][] board, String word) {
 
         for (int i = 0; i < board.length; i++) {
             for (int j = 0; j < board[0].length; j++) {
-                   if(word.charAt(0) == board[i][j]){
-                       boolean dfs = dfs(0, i, j, board, word);
-                       if(dfs){
-                           return true;
-                       }
-                   }
+                if (word.charAt(0) == board[i][j]) {
+                    boolean dfs = dfs(0, i, j, board, word);
+                    if (dfs) {
+                        return true;
+                    }
+                }
             }
         }
         return false;
     }
 
-   static boolean dfs(int save,int i , int j,char[][] board,String word){
-        if(!(i>=0&&j>=0&&i < board.length && j<board[0].length)){
+    static boolean dfs(int save, int i, int j, char[][] board, String word) {
+        if (!(i >= 0 && j >= 0 && i < board.length && j < board[0].length)) {
             return false;
         }
-        if(word.charAt(save) == board[i][j]){
-            if(save == word.length()-1){
+        if (word.charAt(save) == board[i][j]) {
+            if (save == word.length() - 1) {
                 return true;
             }
-            save ++;
+            save++;
             char c = board[i][j];
             board[i][j] = '1';
             boolean dfs = dfs(save, i + 1, j, board, word);
@@ -40,7 +40,7 @@ public class b_单词搜索 {
             board[i][j] = c;
             return dfs || dfs1 || dfs2 || dfs3;
         }
-            return false;
+        return false;
     }
 
 

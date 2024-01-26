@@ -6,7 +6,7 @@ public class b_最小栈 {
 
     /**
      * min stack 压栈逻辑
-     *  https://leetcode.cn/problems/min-stack/solutions/674293/tu-li-zhan-shi-shuang-zhan-shi-xian-zui-fcwj5/?envType=study-plan-v2&envId=top-interview-150
+     * https://leetcode.cn/problems/min-stack/solutions/674293/tu-li-zhan-shi-shuang-zhan-shi-xian-zui-fcwj5/?envType=study-plan-v2&envId=top-interview-150
      *
      * @author 刘家辉
      * @date 2024/01/17
@@ -22,12 +22,12 @@ public class b_最小栈 {
         }
 
         public void push(int val) {
-           data.push(val);
-           if(help.isEmpty() || val <= help.peek()){
-               help.push(val);
-           }else {
-               help.push(help.peek());
-           }
+            data.push(val);
+            if (help.isEmpty() || val <= help.peek()) {
+                help.push(val);
+            } else {
+                help.push(help.peek());
+            }
 
         }
 
@@ -41,7 +41,7 @@ public class b_最小栈 {
         }
 
         public int getMin() {
-          return   help.peek();
+            return help.peek();
         }
     }
 }

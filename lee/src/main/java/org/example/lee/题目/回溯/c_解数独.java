@@ -20,25 +20,26 @@ public class c_解数独 {
     /**
      * solve sudoku
      * 解数独 回溯 做过N皇后思路便很明确
+     *
      * @param board board
      */
     public static void solveSudoku(char[][] board) {
-        solution(board, 0,0);
+        solution(board, 0, 0);
     }
 
     public static boolean solution(char[][] board, int row, int columns) {
         if (row == 9) {
             return true;
         }
-        while (row<9&&columns<9&&board[row][columns]!='.'){
-            if(columns !=8) {
+        while (row < 9 && columns < 9 && board[row][columns] != '.') {
+            if (columns != 8) {
                 columns++;
-            }else {
-                columns=0;
+            } else {
+                columns = 0;
                 row++;
             }
         }
-        if(!(row ==9||columns==9)) {
+        if (!(row == 9 || columns == 9)) {
             for (int j = 1; j <= 9; j++) {
                 char key = (char) ('0' + j);
                 if (isValid(board, key, 9, row, columns)) {
@@ -75,11 +76,11 @@ public class c_解数独 {
         }
         int r = row / 3, c = columns / 3;
         for (int a = r * 3; a < r * 3 + 3; a++) {
-            if(a == row){
+            if (a == row) {
                 continue;
             }
             for (int b = c * 3; b < c * 3 + 3; b++) {
-                if(b == columns){
+                if (b == columns) {
                     continue;
                 }
                 if (board[a][b] == key) {

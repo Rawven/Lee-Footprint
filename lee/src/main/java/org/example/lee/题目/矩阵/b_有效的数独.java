@@ -10,6 +10,7 @@ public class b_有效的数独 {
      * 数字 1-9 在每一个以粗实线分隔的 3x3 宫内只能出现一次。（请参考示例图）
      * is valid sudoku
      * 矩阵 第一次做
+     *
      * @param board board
      * @return boolean
      */

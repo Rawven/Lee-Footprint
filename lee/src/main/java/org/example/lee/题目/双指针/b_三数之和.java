@@ -22,36 +22,36 @@ public class b_三数之和 {
     public static List<List<Integer>> threeSum(int[] nums) {
         List<List<Integer>> lists = new ArrayList<>();
         Arrays.sort(nums);
-        int len =nums.length;
-        int target,left,right ;
-        for (int i = 0; i< nums.length && nums[i]<=0; i++) {
-                if(i>0 && nums[i] == nums[i-1]){
-                    continue;
-                }
-                target = -1 * nums[i];
-                left = i+1;
-                right = len - 1;
-                while (left < right) {
-                    if (nums[left] + nums[right] > target) {
-                        right--;
-                    } else if (nums[left] + nums[right] < target) {
+        int len = nums.length;
+        int target, left, right;
+        for (int i = 0; i < nums.length && nums[i] <= 0; i++) {
+            if (i > 0 && nums[i] == nums[i - 1]) {
+                continue;
+            }
+            target = -1 * nums[i];
+            left = i + 1;
+            right = len - 1;
+            while (left < right) {
+                if (nums[left] + nums[right] > target) {
+                    right--;
+                } else if (nums[left] + nums[right] < target) {
+                    left++;
+                } else {
+                    ArrayList<Integer> objects = new ArrayList<>();
+                    objects.add(nums[left]);
+                    objects.add(nums[right]);
+                    objects.add(nums[i]);
+                    lists.add(objects);
+                    while (left < right && nums[left] == nums[left + 1]) {
                         left++;
-                    } else {
-                        ArrayList<Integer> objects = new ArrayList<>();
-                        objects.add(nums[left]);
-                        objects.add(nums[right]);
-                        objects.add(nums[i]);
-                        lists.add(objects);
-                        while (left<right && nums[left] == nums[left+1]){
-                            left++;
-                        }
-                        left++;
-                        while (left<right && nums[right] == nums[right-1]){
-                            right--;
-                        }
+                    }
+                    left++;
+                    while (left < right && nums[right] == nums[right - 1]) {
                         right--;
                     }
+                    right--;
                 }
+            }
 
         }
         return lists;
@@ -69,21 +69,21 @@ public class b_三数之和 {
         HashMap<Integer, Integer> map = new HashMap<>();
         HashMap<Integer, Integer> map1 = new HashMap<>();
         Arrays.sort(nums);
-        int target,sa;
-        for (int i = 0; i< nums.length && nums[i]<=0 ; i++) {
+        int target, sa;
+        for (int i = 0; i < nums.length && nums[i] <= 0; i++) {
             if (!map1.containsKey(nums[i])) {
                 target = -1 * nums[i];
                 map1.put(nums[i], 1);
                 for (int j = i + 1; j < nums.length; j++) {
                     if (i != j) {
-                        sa=j;
+                        sa = j;
                         if (map.containsKey(target - nums[j]) && map.get(target - nums[j]) == i) {
                             ArrayList<Integer> objects = new ArrayList<>();
                             objects.add(nums[i]);
                             objects.add(nums[j]);
                             objects.add(target - nums[j]);
                             lists.add(objects);
-                            while (j+1<nums.length &&nums[j] == nums[j+1]){
+                            while (j + 1 < nums.length && nums[j] == nums[j + 1]) {
                                 j++;
                             }
                         }

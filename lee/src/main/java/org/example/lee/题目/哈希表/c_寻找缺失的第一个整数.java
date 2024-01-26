@@ -13,6 +13,7 @@ public class c_寻找缺失的第一个整数 {
      *   然后思路就是把位于 0-nums.length-1 内的值放入 它所在的位置
      *   比如 值x 就应该放在 nums[x-1]
      *   最后再遍历一次 看哪个index不满足 nums[i-1] = i 则返回什么值
+     *
      * @param nums nums
      * @return int
      */
@@ -21,7 +22,7 @@ public class c_寻找缺失的第一个整数 {
         for (int i = 0; i < len; i++) {
             //TODO 一共就会交换最多len次
             //TODO nums[nums[i] - 1] != nums[i] 内含 nums[i]-1 !=i 和 二者元素不相等条件
-            while (nums[i] <= len && nums[i] > 0 && nums[nums[i] - 1] != nums[i] ) {
+            while (nums[i] <= len && nums[i] > 0 && nums[nums[i] - 1] != nums[i]) {
                 save2 = nums[nums[i] - 1];
                 nums[nums[i] - 1] = nums[i];
                 nums[i] = save2;

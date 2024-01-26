@@ -9,7 +9,7 @@ package org.example.lee;
 public class Test {
     public static void main(String[] args) {
         int choice = 1;
-        System.out.println(choice--==1);
+        System.out.println(choice-- == 1);
         System.out.println(choice);
     }
 }
