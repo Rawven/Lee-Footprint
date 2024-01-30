@@ -1,5 +1,7 @@
 package org.example.lee;
 
+import java.util.concurrent.ConcurrentHashMap;
+
 /**
  * test
  *
@@ -8,8 +10,7 @@ package org.example.lee;
  */
 public class Test {
     public static void main(String[] args) {
-        int choice = 1;
-        System.out.println(choice-- == 1);
-        System.out.println(choice);
+        ConcurrentHashMap<Object, Object> map = new ConcurrentHashMap<>();
+
     }
 }

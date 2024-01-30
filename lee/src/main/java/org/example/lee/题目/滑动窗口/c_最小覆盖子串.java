@@ -37,7 +37,6 @@ public class c_最小覆盖子串 {
             }
             tem[map2.get(t.charAt(i))]++;
         }
-
         while (right < s.length()) {
             char c = s.charAt(right);
             if (map2.containsKey(c)) {
