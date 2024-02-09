@@ -13,10 +13,10 @@ public class a_最后一个单词的长度 {
      */
     public static int lengthOfLastWord(String s){
         int len = s.length(),index = len-1,key = 0;
-        while (s.charAt(index)==' '){
-             index--;
+        while (index>=0&&s.charAt(index)==' '){
+            index--;
         }
-        while (s.charAt(index)!=' '){
+        while (index>=0&&s.charAt(index)!=' '){
             key++;
             index--;
         }
