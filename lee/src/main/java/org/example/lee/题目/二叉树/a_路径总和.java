@@ -2,7 +2,7 @@ package org.example.lee.题目.二叉树;
 
 import org.example.lee.model.TreeNode;
 
-public class b_路径总和 {
+public class a_路径总和 {
 
     public int num=0;
     public boolean hasPathSum(TreeNode root, int targetSum) {
