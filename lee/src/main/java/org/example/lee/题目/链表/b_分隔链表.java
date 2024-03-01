@@ -1,7 +1,7 @@
 package org.example.lee.题目.链表;
 
 import org.example.lee.model.ListNode;
-import org.example.lee.model.ListNodeUtil;
+import org.example.lee.util.ListNodeUtil;
 
 public class b_分隔链表 {
     public static void main(String[] args) {

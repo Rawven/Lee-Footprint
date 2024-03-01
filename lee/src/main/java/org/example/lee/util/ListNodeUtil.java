@@ -1,4 +1,6 @@
-package org.example.lee.model;
+package org.example.lee.util;
+
+import org.example.lee.model.ListNode;
 
 public class ListNodeUtil {
     public static ListNode arrayToListNode(int[] arr) {
