@@ -4,10 +4,6 @@ import org.example.lee.model.TreeNode;
 import org.example.lee.util.LeeUtil;
 
 public class c_二叉树中的最大路径和 {
-    public static void main(String[] args) {
-        maxPathSum(LeeUtil.arrayToTreeNode(new Integer[]{-10,9,20,null,null,15,7}));
-    }
-
     public static int save=0;
 
     /**

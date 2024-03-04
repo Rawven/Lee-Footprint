@@ -1,12 +1,9 @@
 package org.example.lee.题目.链表;
 
 import org.example.lee.model.ListNode;
-import org.example.lee.util.ListNodeUtil;
 
 public class b_分隔链表 {
-    public static void main(String[] args) {
-        partition(ListNodeUtil.arrayToListNode(new int[]{1, 1}), 1);
-    }
+
 
     /**
      * partition
