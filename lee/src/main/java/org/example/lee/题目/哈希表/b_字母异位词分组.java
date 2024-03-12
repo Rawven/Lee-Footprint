@@ -8,7 +8,7 @@ import java.util.List;
 public class b_字母异位词分组 {
     /**
      * group anagrams
-     *  和单个判断字母异位词思想不同 因为是多个 先排序
+     *  和单个判断字母异位词思想不同 因为是多个 先排序/
      * @param strs strs
      * @return {@link List}<{@link List}<{@link String}>>
      */
