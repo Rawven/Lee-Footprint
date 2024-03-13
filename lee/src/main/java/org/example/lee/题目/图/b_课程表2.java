@@ -38,6 +38,7 @@ public class b_课程表2 {
                             if (help[poll[1]]==0) {
                                 res[index--] =poll[1];
                                 help[poll[1]]=1;
+
                             }
                         }
                     } else {
