@@ -1,6 +1,6 @@
 package org.example.lee.题目.贪心;
 
-public class b_买股票的最佳时机 {
+public class b_买股票的最佳时机2 {
     /**
      * max profit
      * 就得贪   1-3+3-5 =1-5  记住
