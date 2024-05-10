@@ -1,7 +1,10 @@
 package org.example.lee.题目.回溯;
 
 import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.Collections;
 import java.util.List;
+import java.util.stream.Collectors;
 
 public class c_N皇后 {
 
@@ -16,9 +19,10 @@ public class c_N皇后 {
      * @param n n
      * @return {@link List}<{@link List}<{@link String}>>
      */
-    public static List<List<String>> solveNQueens(int n) {
+    public  List<List<String>> solveNQueens(int n) {
         char[][] arrs = new char[n][n];
         List<List<String>> list = new ArrayList<>();
+        //初始化
         for (char[] arr :
                 arrs) {
             for (int i = 0; i < n; i++) {
@@ -29,13 +33,9 @@ public class c_N皇后 {
         return list;
     }
 
-    public static void solutions(List<List<String>> list, char[][] arr, int row, int n) {
+    public  void solutions(List<List<String>> list, char[][] arr, int row, int n) {
         if (row == n) {
-            ArrayList<String> strings = new ArrayList<>();
-            for (char[] c : arr) {
-                strings.add(new String(c));
-            }
-            list.add(strings);
+            list.add(Arrays.stream(arr).map(String::new).collect(Collectors.toList()));
             return;
         }
         for (int i = 0; i < n; i++) {
@@ -47,7 +47,7 @@ public class c_N皇后 {
         }
     }
 
-    public static boolean isValid(char[][] arr, int columns, int row, int n) {
+    public  boolean isValid(char[][] arr, int columns, int row, int n) {
         for (int i = 0; i < row; i++) {
             if (arr[i][columns] == 'Q') {
                 return false;

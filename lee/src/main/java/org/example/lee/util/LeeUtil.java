@@ -28,31 +28,29 @@ public class LeeUtil {
     }
 
 
-    public static TreeNode arrayToTreeNode(int[] integers) {
-        //实现将一个int数组转换为二叉树 数组是按照层次遍历顺序给的元素
-        if (integers.length == 0) {
+    public static TreeNode arrayToTreeNode(Integer[] integers) {
+        //实现将一个Integer数组转换为二叉树 数组是按照层次遍历顺序给的元素
+        if (integers == null || integers.length == 0) {
             return null;
         }
+
         TreeNode root = new TreeNode(integers[0]);
         Queue<TreeNode> queue = new LinkedList<>();
-        queue.add(root);
-        boolean isLeft = true;
-        for (int i = 1; i < integers.length; i++) {
-            TreeNode node = queue.peek();
-            if (isLeft) {
-                if (integers[i] != -1) {
-                    node.left = new TreeNode(integers[i]);
-                    queue.add(node.left);
-                }
-                isLeft = false;
-            } else {
-                if (integers[i] != -1) {
-                    node.right = new TreeNode(integers[i]);
-                    queue.add(node.right);
-                }
-                queue.poll();
-                isLeft = true;
+        queue.offer(root);
+
+        int i = 1;
+        while (i < integers.length) {
+            TreeNode curr = queue.poll();
+            if (integers[i] != null) {
+                curr.left = new TreeNode(integers[i]);
+                queue.offer(curr.left);
             }
+            i++;
+            if (i < integers.length && integers[i] != null) {
+                curr.right = new TreeNode(integers[i]);
+                queue.offer(curr.right);
+            }
+            i++;
         }
         return root;
     }

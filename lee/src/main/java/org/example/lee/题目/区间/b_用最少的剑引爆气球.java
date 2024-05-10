@@ -19,14 +19,14 @@ public class b_用最少的剑引爆气球 {
         int[] t = null;
         for (int i = 0; i < points.length; i++) {
             if (t == null || t[1] < points[i][0]) {
-                t = points[i];
+                //无法覆盖更多的气球  key++
                 key++;
-            } else {
-                if (t[1] < points[i][1]) {
-                    points[i][1] = t[1];
-                }
-                t = points[i];
+            } else  if (t[1] < points[i][1]) {
+                //记录这根箭的最远距离
+                points[i][1] = t[1];
             }
+            //更新start位置
+            t = points[i];
         }
         return key;
     }

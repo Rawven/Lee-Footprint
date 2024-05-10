@@ -37,11 +37,11 @@ public class b_三数之和 {
                 } else if (nums[left] + nums[right] < target) {
                     left++;
                 } else {
-                    ArrayList<Integer> objects = new ArrayList<>();
-                    objects.add(nums[left]);
-                    objects.add(nums[right]);
-                    objects.add(nums[i]);
-                    lists.add(objects);
+                    ArrayList<Integer> list = new ArrayList<>();
+                    list.add(nums[left]);
+                    list.add(nums[right]);
+                    list.add(nums[i]);
+                    lists.add(list);
                     while (left < right && nums[left] == nums[left + 1]) {
                         left++;
                     }

@@ -8,7 +8,7 @@ import org.example.lee.model.TreeNode;
  * @author 刘家辉
  * @date 2024/03/03
  */
-public class 二叉树的最近公共祖先 {
+public class b_二叉树的最近公共祖先 {
     public TreeNode lowestCommonAncestor(TreeNode root, TreeNode p, TreeNode q) {
         if(root == null){
             return null;
