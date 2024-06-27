@@ -7,92 +7,36 @@ import java.util.List;
 
 public class b_三数之和 {
 
-
-    /**
-     * 给你一个整数数组 nums ，判断是否存在三元组 [nums[i], nums[j], nums[k]]
-     * 满足 i != j、i != k 且 j != k ，同时还满足 nums[i] + nums[j] + nums[k] == 0 。请
-     * 你返回所有和为 0 且不重复的三元组。
-     * 注意：答案中不可以包含重复的三元组。
-     * three sum
-     * 难点在于去重 双指针能保持复杂度在 n²
-     *
-     * @param nums nums
-     * @return {@link List}<{@link List}<{@link Integer}>>
-     */
     public static List<List<Integer>> threeSum(int[] nums) {
-        List<List<Integer>> lists = new ArrayList<>();
+        List<List<Integer>> list = new ArrayList<>();
         Arrays.sort(nums);
-        int len = nums.length;
-        int target, left, right;
-        for (int i = 0; i < nums.length && nums[i] <= 0; i++) {
-            if (i > 0 && nums[i] == nums[i - 1]) {
+        //第一层循环 取一个数为target
+        for (int i = 0 ; i < nums.length ; i++){
+            if(i>0&&nums[i-1]==nums[i]){
                 continue;
             }
-            target = -1 * nums[i];
-            left = i + 1;
-            right = len - 1;
-            while (left < right) {
-                if (nums[left] + nums[right] > target) {
-                    right--;
-                } else if (nums[left] + nums[right] < target) {
+            int target = -nums[i];
+            int left = i+1;
+            int right = nums.length-1;
+            //第二层循环 找两个与target相同的数
+            while (left < right){
+                int num = nums[left] + nums[right];
+                if(num < target){
                     left++;
-                } else {
-                    ArrayList<Integer> list = new ArrayList<>();
-                    list.add(nums[left]);
-                    list.add(nums[right]);
-                    list.add(nums[i]);
-                    lists.add(list);
-                    while (left < right && nums[left] == nums[left + 1]) {
+                }else if(num > target){
+                    right--;
+                }else {
+                    list.add(List.of(nums[left++],nums[right--],nums[i]));
+                    //找下一种不重复的组合
+                    while (left<right && nums[left-1]==nums[left]){
                         left++;
                     }
-                    left++;
-                    while (left < right && nums[right] == nums[right - 1]) {
+                    while (left<right && nums[right]==nums[right+1]){
                         right--;
                     }
-                    right--;
-                }
-            }
-
-        }
-        return lists;
-    }
-
-    /**
-     * 记录一下自己做的蠢方法
-     * three sum first
-     *
-     * @param nums nums
-     * @return {@link List}<{@link List}<{@link Integer}>>
-     */
-    public static List<List<Integer>> threeSumFirst(int[] nums) {
-        List<List<Integer>> lists = new ArrayList<>();
-        HashMap<Integer, Integer> map = new HashMap<>();
-        HashMap<Integer, Integer> map1 = new HashMap<>();
-        Arrays.sort(nums);
-        int target, sa;
-        for (int i = 0; i < nums.length && nums[i] <= 0; i++) {
-            if (!map1.containsKey(nums[i])) {
-                target = -1 * nums[i];
-                map1.put(nums[i], 1);
-                for (int j = i + 1; j < nums.length; j++) {
-                    if (i != j) {
-                        sa = j;
-                        if (map.containsKey(target - nums[j]) && map.get(target - nums[j]) == i) {
-                            ArrayList<Integer> objects = new ArrayList<>();
-                            objects.add(nums[i]);
-                            objects.add(nums[j]);
-                            objects.add(target - nums[j]);
-                            lists.add(objects);
-                            while (j + 1 < nums.length && nums[j] == nums[j + 1]) {
-                                j++;
-                            }
-                        }
-                        map.put(nums[sa], i);
-
-                    }
                 }
             }
         }
-        return lists;
+        return list;
     }
 }

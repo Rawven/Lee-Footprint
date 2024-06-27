@@ -20,7 +20,6 @@ public class c_重新安排路程 {
         List<List<String>> list = Arrays.stream(array)
             .map(Arrays::asList)
             .collect(Collectors.toList());
-        new c_重新安排路程().findItinerary(list);
     }
 
     /**
