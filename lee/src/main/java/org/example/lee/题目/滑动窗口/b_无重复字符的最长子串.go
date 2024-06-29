@@ -1,4 +1,4 @@
-package 滑动窗口
+package hdck
 
 func lengthOfLongestSubstring(s string) int {
 	//时间复杂度为O(n),因为只有左右指针各遍历过一次（2*n）

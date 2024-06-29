@@ -1,4 +1,4 @@
-package 滑动窗口
+package hdck
 
 func findAnagrams(s string, p string) []int {
 	var arr, brr [26]int

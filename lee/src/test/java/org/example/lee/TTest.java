@@ -13,10 +13,11 @@ import org.springframework.test.context.junit4.SpringRunner;
 @RunWith(SpringRunner.class)
 @SpringBootTest
 public class TTest {
-    @org.junit.Test
-    public void test() {
 
-    }
+  @org.junit.Test
+  public void test() {
+
+  }
 
 
 }

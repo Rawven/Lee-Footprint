@@ -1,9 +1,8 @@
 package org.example.lee.题目.二叉树;
 
-import org.example.lee.model.TreeNode;
-
 import java.util.ArrayList;
 import java.util.List;
+import org.example.lee.model.TreeNode;
 
 /**
  * a 二叉树中序遍历
@@ -14,18 +13,18 @@ import java.util.List;
 public class a_二叉树的中序遍历 {
 
 
-    public List<Integer> inorderTraversal(TreeNode root) {
-        ArrayList<Integer> list = new ArrayList<>();
-        tool(list, root);
-        return list;
-    }
+  public List<Integer> inorderTraversal(TreeNode root) {
+    ArrayList<Integer> list = new ArrayList<>();
+    tool(list, root);
+    return list;
+  }
 
-    public void tool(List<Integer> list, TreeNode root) {
-        if (root == null) {
-            return;
-        }
-        tool(list, root.left);
-        list.add(root.val);
-        tool(list, root.right);
+  public void tool(List<Integer> list, TreeNode root) {
+    if (root == null) {
+      return;
     }
+    tool(list, root.left);
+    list.add(root.val);
+    tool(list, root.right);
+  }
 }

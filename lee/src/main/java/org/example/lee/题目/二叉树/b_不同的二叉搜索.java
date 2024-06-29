@@ -8,7 +8,7 @@ package org.example.lee.题目.二叉树;
  */
 public class b_不同的二叉搜索 {
 
-    //先放弃
+  //先放弃
 
 //    public List<TreeNode> generateTrees(int n) {
 //        List<TreeNode> listNodes = new ArrayList<>();
