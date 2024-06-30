@@ -2,11 +2,8 @@ package org.example.lee.题目.字符串;
 
 public class a_反转字符串Ⅱ {
 
-  public static void main(String[] args) {
-    reverseStr("abcdefg", 2);
-  }
 
-  public static String reverseStr(String s, int k) {
+  public  String reverseStr(String s, int k) {
     int index = 0;
     char[] array = s.toCharArray();
     while (index <= s.length()) {
@@ -24,7 +21,7 @@ public class a_反转字符串Ⅱ {
     return new String(array);
   }
 
-  private static void reverseStr(char[] s, int start, int end) {
+  private  void reverseStr(char[] s, int start, int end) {
     int left = start, right = end;
     char h;
     while (left <= right) {

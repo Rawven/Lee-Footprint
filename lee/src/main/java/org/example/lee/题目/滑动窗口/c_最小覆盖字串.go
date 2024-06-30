@@ -12,7 +12,7 @@ func minWindow(s string, t string) string {
 	}
 	//bArr作为s内窗口的统计数组
 	for right := 0; right < len(s); right++ {
-		//该字符纯在于t中
+		//该字符存在于t中
 		if aArr[s[right]] > 0 {
 			r := s[right]
 			//如果小于所需数量
@@ -29,7 +29,7 @@ func minWindow(s string, t string) string {
 				minLen = right + 1 - left
 			}
 			if aArr[s[left]] > 0 {
-				//当前字符刚好够，则counter+1 退出循环
+				//当字符刚好够，退出目前的字符，然后counter+1,退出循环,寻找下一个符合的窗口
 				if bArr[s[left]] == aArr[s[left]] {
 					counter++
 				}

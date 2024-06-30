@@ -1,4 +1,4 @@
-package 前缀和
+package qzh
 
 // 前缀和例题 前缀和: 就是前n项和
 func subarraySum(nums []int, k int) int {

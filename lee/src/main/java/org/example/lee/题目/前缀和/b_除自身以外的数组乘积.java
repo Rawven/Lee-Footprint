@@ -4,9 +4,6 @@ public class b_除自身以外的数组乘积 {
 
   /**
    * product except self 前缀积
-   *
-   * @param nums nums
-   * @return {@link int[]}
    */
   public int[] productExceptSelf(int[] nums) {
     int[] key = new int[nums.length];

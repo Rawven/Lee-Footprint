@@ -6,18 +6,6 @@ import java.util.List;
 
 public class b_四数之和 {
 
-  public static void main(String[] args) {
-    fourSum(new int[]{1000000000, 1000000000, 1000000000, 1000000000}, -294967296);
-  }
-
-
-  /**
-   * four sum 一坨屎
-   *
-   * @param nums   nums
-   * @param target target
-   * @return {@link List}<{@link List}<{@link Integer}>>
-   */
   public static List<List<Integer>> fourSum(int[] nums, int target) {
     Arrays.sort(nums);
     long realTarget = (long) target;

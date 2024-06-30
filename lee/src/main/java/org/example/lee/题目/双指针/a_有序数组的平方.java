@@ -4,11 +4,7 @@ import org.example.lee.util.LeeUtil;
 
 public class a_有序数组的平方 {
 
-  public static void main(String[] args) {
-    sortedSquares(LeeUtil.getArray("[[-4,-1,0,3,10]]")[0]);
-  }
-
-  public static int[] sortedSquares(int[] nums) {
+  public  int[] sortedSquares(int[] nums) {
     int left = 0, right = 0;
     for (int i = 1; i < nums.length; i++) {
       right = i;
