@@ -2,24 +2,48 @@ package main
 
 import _ "container/list"
 
-func main() {
-	firstMissingPositive([]int{3, 4, -1, 1})
+type ListNode struct {
+	Val  int
+	Next *ListNode
 }
-func firstMissingPositive(nums []int) int {
 
-	for i := 0; i < len(nums); i++ {
-		for nums[i] > 0 && nums[i] < len(nums) && i != nums[i]-1 {
-			a := nums[i]
-			nums[i] = nums[nums[i]-1]
-			nums[nums[i]-1] = a
+func main() {
 
-		}
+	isPalindrome(&ListNode{
+		Val: 1,
+		Next: &ListNode{
+			Val: 2,
+			Next: &ListNode{
+				Val: 2,
+				Next: &ListNode{
+					Val:  1,
+					Next: nil,
+				},
+			},
+		},
+	})
+}
+func isPalindrome(head *ListNode) bool {
+	a, b, i, i1 := head, head, 0, 0
+	var h1 *ListNode
+	for b != nil && b.Next != nil {
+		i++
+		b = b.Next.Next
+		a = a.Next
 	}
-
-	for i := 0; i < len(nums); i++ {
-		if nums[i] != i+1 {
-			return i + 1
-		}
+	for a != nil {
+		h := a
+		a = a.Next
+		h.Next = h1
+		h1 = h
 	}
-	return len(nums) + 1
+	for i1 < i {
+		i1++
+		if h1.Val != head.Val {
+			return false
+		}
+		h1 = h1.Next
+		head = head.Next
+	}
+	return true
 }
