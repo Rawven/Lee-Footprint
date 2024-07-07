@@ -29,14 +29,5 @@ public class b_环形链表Ⅱ {
       a = a.next;
     }
     return a;
-//        HashSet<ListNode> set = new HashSet<>();
-//        while (head!=null){
-//            if(set.contains(head)){
-//                return head;
-//            }
-//            set.add(head);
-//            head = head.next;
-//        }
-//        return null;
   }
 }
