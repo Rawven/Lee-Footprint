@@ -1,49 +1,45 @@
 package main
 
-import _ "container/list"
+import (
+	_ "container/list"
+)
 
-type ListNode struct {
-	Val  int
-	Next *ListNode
+type TreeNode struct {
+	Val   int
+	Left  *TreeNode
+	Right *TreeNode
 }
 
-func main() {
-
-	isPalindrome(&ListNode{
-		Val: 1,
-		Next: &ListNode{
-			Val: 2,
-			Next: &ListNode{
-				Val: 2,
-				Next: &ListNode{
-					Val:  1,
-					Next: nil,
-				},
-			},
-		},
-	})
+func buildTree(inorder []int, postorder []int) *TreeNode {
+	//后序遍历的最后一个是头结点
+	//通过这个找到中序遍历里头结点的位置
+	//就可以找到左子树头结点的位置
+	//后序遍历的倒数第二个结点是右子树的头结点
+	return toool(inorder, postorder, 0, len(postorder)-1)
 }
-func isPalindrome(head *ListNode) bool {
-	a, b, i, i1 := head, head, 0, 0
-	var h1 *ListNode
-	for b != nil && b.Next != nil {
-		i++
-		b = b.Next.Next
-		a = a.Next
+
+func toool(inorder, postorder []int, x, y int) *TreeNode {
+	root := &TreeNode{
+		Val:   postorder[y],
+		Left:  nil,
+		Right: nil,
 	}
-	for a != nil {
-		h := a
-		a = a.Next
-		h.Next = h1
-		h1 = h
-	}
-	for i1 < i {
-		i1++
-		if h1.Val != head.Val {
-			return false
+	if x != y {
+		var i int
+		for i = x; i < y; i++ {
+			if inorder[i] == postorder[y] {
+				break
+			}
 		}
-		h1 = h1.Next
-		head = head.Next
+		if x <= i-1 {
+			root.Left = toool(inorder, postorder, x, i-1)
+		}
+		if i+1 <= y-1 {
+			root.Right = toool(inorder, postorder, i, y-1)
+		}
 	}
-	return true
+	return root
+}
+func main() {
+	buildTree([]int{9, 3, 15, 20, 7}, []int{9, 15, 7, 20, 3})
 }

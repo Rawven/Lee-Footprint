@@ -1,10 +1,8 @@
 package org.example.lee.题目.双指针;
 
-import org.example.lee.util.LeeUtil;
-
 public class a_有序数组的平方 {
 
-  public  int[] sortedSquares(int[] nums) {
+  public int[] sortedSquares(int[] nums) {
     int left = 0, right = 0;
     for (int i = 1; i < nums.length; i++) {
       right = i;

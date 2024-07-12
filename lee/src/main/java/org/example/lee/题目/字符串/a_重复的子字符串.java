@@ -3,7 +3,7 @@ package org.example.lee.题目.字符串;
 public class a_重复的子字符串 {
 
 
-  public  boolean repeatedSubstringPattern(String s) {
+  public boolean repeatedSubstringPattern(String s) {
     if (s.isEmpty()) {
       return false;
     }

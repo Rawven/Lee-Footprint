@@ -20,20 +20,15 @@ public class c_合并k条链表 {
         queue.offer(list);
       }
     }
-    ListNode head = null, save = null;
+    ListNode head = new ListNode(0), save = head;
     while (!queue.isEmpty()) {
       ListNode poll = queue.poll();
       if (poll.next != null) {
         queue.offer(poll.next);
       }
-      if (head != null) {
-        head.next = poll;
-        head = head.next;
-      } else {
-        head = poll;
-        save = head;
-      }
+      head.next = poll;
+      head = head.next;
     }
-    return save;
+    return save.next;
   }
 }

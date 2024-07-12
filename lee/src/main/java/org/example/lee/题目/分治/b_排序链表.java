@@ -9,7 +9,6 @@ public class b_排序链表 {
   }
 
   ListNode tool(ListNode node) {
-    int index = 0;
     if (node == null || node.next == null) {
       return node;
     }
@@ -22,25 +21,25 @@ public class b_排序链表 {
     save = slow.next;
     slow.next = null;
     //递归
-    ListNode tool = tool(node);
-    ListNode tool1 = tool(save);
+    ListNode left = tool(node);
+    ListNode right = tool(save);
     //merge
     ListNode head = new ListNode(0);
     ListNode save2 = head;
-    while (tool != null && tool1 != null) {
-      if (tool.val < tool1.val) {
-        head.next = tool;
-        tool = tool.next;
+    while (left != null && right != null) {
+      if (left.val < right.val) {
+        head.next = left;
+        left = left.next;
       } else {
-        head.next = tool1;
-        tool1 = tool1.next;
+        head.next = right;
+        right = right.next;
       }
       head = head.next;
     }
-    if (tool != null) {
-      head.next = tool;
+    if (left != null) {
+      head.next = left;
     } else {
-      head.next = tool1;
+      head.next = right;
     }
     return save2;
   }

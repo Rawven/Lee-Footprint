@@ -3,7 +3,7 @@ package org.example.lee.题目.字符串;
 public class a_反转字符串Ⅱ {
 
 
-  public  String reverseStr(String s, int k) {
+  public String reverseStr(String s, int k) {
     int index = 0;
     char[] array = s.toCharArray();
     while (index <= s.length()) {
@@ -21,7 +21,7 @@ public class a_反转字符串Ⅱ {
     return new String(array);
   }
 
-  private  void reverseStr(char[] s, int start, int end) {
+  private void reverseStr(char[] s, int start, int end) {
     int left = start, right = end;
     char h;
     while (left <= right) {

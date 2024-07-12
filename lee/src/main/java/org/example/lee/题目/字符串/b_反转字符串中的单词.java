@@ -6,7 +6,7 @@ public class b_反转字符串中的单词 {
   /**
    * reverse words 除空格连单词即可
    */
-  public  String reverseWords(String s) {
+  public String reverseWords(String s) {
     int index, len = s.length(), right;
     index = len - 1;
     StringBuilder stringBuilder = new StringBuilder();

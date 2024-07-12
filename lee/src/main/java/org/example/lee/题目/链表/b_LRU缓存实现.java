@@ -10,18 +10,6 @@ import java.util.HashMap;
  */
 public class b_LRU缓存实现 {
 
-  public static void main(String[] args) {
-    LRUCache cache = new LRUCache(2);
-    cache.put(2, 1);
-    cache.put(3, 2);
-    cache.get(3);
-    cache.get(2);
-    cache.put(4, 3);
-    cache.get(2);
-    cache.get(3);
-    cache.get(4);
-  }
-
   /**
    * lrucache LRU缓存机制，即采用最近最少使用的缓存策略。它的原则是，如果一个数据最近没有被访问到， 么它将来被访问的几率也很小，
    * 也就是说当限定的内存空间已没有其他空间可用时，应该把最久没有访问到的数据去除掉。
@@ -29,7 +17,7 @@ public class b_LRU缓存实现 {
    * @author 刘家辉
    * @date 2024/01/26
    */
-  static class LRUCache {
+  class LRUCache {
 
     int capacity;
     int size;

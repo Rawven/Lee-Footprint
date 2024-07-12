@@ -12,11 +12,11 @@ import java.util.List;
  */
 public class b_组合总和 {
 
-  public  void main(String[] args) {
+  public void main(String[] args) {
     combinationSum(new int[]{2, 3, 6, 7}, 7);
   }
 
-  public  List<List<Integer>> combinationSum(int[] candidates, int target) {
+  public List<List<Integer>> combinationSum(int[] candidates, int target) {
     List<List<Integer>> lists = new ArrayList<>();
     List<Integer> list = new ArrayList<>();
     int length = candidates.length;
@@ -26,7 +26,7 @@ public class b_组合总和 {
     return lists;
   }
 
-  public  void tool(List<List<Integer>> saveL, List<Integer> save,
+  public void tool(List<List<Integer>> saveL, List<Integer> save,
       int initNum, int index, int[] candidates, int target, int begin, int len) {
     if (initNum == target) {
       ArrayList<Integer> list = new ArrayList<>(save);

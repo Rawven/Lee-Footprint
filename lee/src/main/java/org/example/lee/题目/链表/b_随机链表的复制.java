@@ -1,8 +1,7 @@
 package org.example.lee.题目.链表;
 
-import org.example.lee.model.重名.Node;
-
 import java.util.HashMap;
+import org.example.lee.model.重名.Node;
 
 public class b_随机链表的复制 {
 

@@ -1,10 +1,7 @@
 package org.example.lee.题目.动态规划;
 
 import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.Collections;
 import java.util.List;
-import org.example.lee.算法实现.快速排序;
 
 public class a_杨辉三角 {
 

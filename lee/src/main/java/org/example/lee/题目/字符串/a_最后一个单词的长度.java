@@ -9,7 +9,7 @@ public class a_最后一个单词的长度 {
    * @param s s
    * @return int
    */
-  public  int lengthOfLastWord(String s) {
+  public int lengthOfLastWord(String s) {
     int len = s.length(), index = len - 1, key = 0;
     while (index >= 0 && s.charAt(index) == ' ') {
       index--;
@@ -27,7 +27,7 @@ public class a_最后一个单词的长度 {
    * @param s s
    * @return int
    */
-  public  int lengthOfLastWord1(String s) {
+  public int lengthOfLastWord1(String s) {
     int len = s.length(), index = 0, key = 0, save = 0;
     while (index < len) {
       char c = s.charAt(index);
