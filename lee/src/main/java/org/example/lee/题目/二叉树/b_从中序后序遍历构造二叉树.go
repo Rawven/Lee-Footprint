@@ -2,11 +2,10 @@ package 二叉树
 
 var rootIndex int
 
-func buildTree(inorder []int, postorder []int) *TreeNode {
-	//后序遍历的最后一个是头结点
-	//通过这个找到中序遍历里头结点的位置
-	//就可以找到左子树头结点的位置
-	//后序遍历的倒数第二个结点是右子树的头结点
+func buildTree1(inorder []int, postorder []int) *TreeNode {
+	//对于中序遍历 实际上有一个分治的思想
+	//不断从root结点进行拆分
+	//然后后序遍历从右到左，可以保证每次获得的都是右子树
 	rootIndex = len(postorder) - 1
 	m := make(map[int]int)
 	for k, v := range inorder {
