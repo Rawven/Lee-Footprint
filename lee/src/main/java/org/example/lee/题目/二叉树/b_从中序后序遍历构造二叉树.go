@@ -26,6 +26,7 @@ func toool(inorder, postorder []int, x, y int, m map[int]int) *TreeNode {
 	mid := m[root.Val]
 	root.Right = toool(inorder, postorder, mid+1, y, m)
 	root.Left = toool(inorder, postorder, x, mid-1, m)
+
 	return root
 }
 

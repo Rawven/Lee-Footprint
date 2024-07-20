@@ -2,20 +2,6 @@ package org.example.lee.题目.回溯;
 
 public class c_解数独 {
 
-  public static void main(String[] args) {
-    char[][] sudokuBoard = {
-        {'5', '3', '.', '.', '7', '.', '.', '.', '.'},
-        {'6', '.', '.', '1', '9', '5', '.', '.', '.'},
-        {'.', '9', '8', '.', '.', '.', '.', '6', '.'},
-        {'8', '.', '.', '.', '6', '.', '.', '.', '3'},
-        {'4', '.', '.', '8', '.', '3', '.', '.', '1'},
-        {'7', '.', '.', '.', '2', '.', '.', '.', '6'},
-        {'.', '6', '.', '.', '.', '.', '2', '8', '.'},
-        {'.', '.', '.', '4', '1', '9', '.', '.', '5'},
-        {'.', '.', '.', '.', '8', '.', '.', '7', '9'}
-    };
-    solveSudoku(sudokuBoard);
-  }
 
 
   /**
@@ -23,11 +9,11 @@ public class c_解数独 {
    *
    * @param board board
    */
-  public static void solveSudoku(char[][] board) {
+  public  void solveSudoku(char[][] board) {
     solution(board, 0, 0);
   }
 
-  public static boolean solution(char[][] board, int row, int columns) {
+  public  boolean solution(char[][] board, int row, int columns) {
     if (row == 9) {
       return true;
     }
@@ -63,7 +49,7 @@ public class c_解数独 {
 
   }
 
-  public static boolean isValid(char[][] board, char key, int n, int row, int columns) {
+  public  boolean isValid(char[][] board, char key, int n, int row, int columns) {
     for (int i = 0; i < n; i++) {
       if (board[row][i] == key) {
         return false;

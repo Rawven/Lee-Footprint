@@ -1,13 +1,7 @@
 package org.example.lee.题目.KMP;
 
 public class a_找出字符串中第一个匹配项的下标 {
-
-  public static void main(String[] args) {
-    int i = strStr("aabaabaafa", "aabaaf");
-    System.out.println(i);
-  }
-
-  public static int[] getNext(String s) {
+  public  int[] getNext(String s) {
     int j = -1;
     int[] next = new int[s.length()];
     next[0] = j;
@@ -27,7 +21,7 @@ public class a_找出字符串中第一个匹配项的下标 {
     return next;
   }
 
-  public static int strStr(String haystack, String needle) {
+  public  int strStr(String haystack, String needle) {
     if (needle.isEmpty()) {
       return 0;
     }

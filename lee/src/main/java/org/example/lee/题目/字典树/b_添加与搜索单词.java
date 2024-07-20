@@ -2,24 +2,7 @@ package org.example.lee.题目.字典树;
 
 public class b_添加与搜索单词 {
 
-  public static void main(String[] args) {
-    WordDictionary dictionary = new WordDictionary();
-    dictionary.addWord("at");
-    dictionary.addWord("and");
-    dictionary.addWord("an");
-    dictionary.addWord("add");
-    dictionary.search(".at");
-    dictionary.search("bat");
-    dictionary.search(".at");
-    dictionary.search("an.");
-    dictionary.search("a.d.");
-    dictionary.search("b.");
-    dictionary.search("a.d");
-    dictionary.search(".");
-
-  }
-
-  static class WordDictionary {
+   class WordDictionary {
 
     private Node root;
 

@@ -4,11 +4,7 @@ import org.example.lee.util.LeeUtil;
 
 public class b_判断二分图 {
 
-  public static void main(String[] args) {
-    isBipartite(LeeUtil.getArray("[[3],[2,4],[1],[0,4],[1,3]]"));
-  }
-
-  public static boolean isBipartite(int[][] graph) {
+  public  boolean isBipartite(int[][] graph) {
     int[] nodes = new int[graph.length];
     for (int i = 0; i < graph.length; i++) {
       if (nodes[i] == 0) {

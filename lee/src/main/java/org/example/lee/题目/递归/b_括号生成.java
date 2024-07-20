@@ -6,12 +6,6 @@ import java.util.List;
 public class b_括号生成 {
 
 
-  /**
-   * generate parenthesis
-   *
-   * @param n n
-   * @return {@link List}<{@link String}>
-   */
   public List<String> generateParenthesis(int n) {
     ArrayList<String> strings = new ArrayList<>();
     tool(n, n, strings, "");

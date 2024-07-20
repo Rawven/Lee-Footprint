@@ -13,15 +13,6 @@ import java.util.stream.Collectors;
 
 public class c_重新安排路程 {
 
-  public static void main(String[] args) {
-    String[][] array = {{"EZE", "AXA"}, {"TIA", "ANU"}, {"ANU", "JFK"}, {"JFK", "ANU"},
-        {"ANU", "EZE"}, {"TIA", "ANU"}, {"AXA", "TIA"}, {"TIA", "JFK"}, {"ANU", "TIA"},
-        {"JFK", "TIA"}};
-    List<List<String>> list = Arrays.stream(array)
-        .map(Arrays::asList)
-        .collect(Collectors.toList());
-  }
-
   /**
    * solution 不好评价 干脆就记住这个算法吧
    * https://leetcode.cn/problems/reconstruct-itinerary/solutions/389885/zhong-xin-an-pai-xing-cheng-by-leetcode-solution/

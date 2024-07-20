@@ -1,11 +1,5 @@
 package org.example.lee.算法实现;
 
-/**
- * 快速排序
- *
- * @author 刘家辉
- * @date 2023/12/18
- */
 public class 快速排序 {
 
   /* 选取三个元素的中位数 */
@@ -21,14 +15,6 @@ public class 快速排序 {
     }
   }
 
-  /**
-   * partition 划分
-   *
-   * @param nums  nums
-   * @param left  left
-   * @param right right
-   * @return int
-   */
   public int partition(int[] nums, int left, int right) {
     int med = medianThree(nums, left, (left + right) / 2, right);
     int t = nums[med];

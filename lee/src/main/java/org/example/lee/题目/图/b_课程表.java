@@ -5,13 +5,6 @@ import java.util.Queue;
 
 public class b_课程表 {
 
-  /**
-   * can finish 拓扑排序
-   *
-   * @param numCourses    num courses
-   * @param prerequisites prerequisites
-   * @return boolean
-   */
   public boolean canFinish(int numCourses, int[][] prerequisites) {
     int[] arr = new int[numCourses];
     Queue<int[]> queue = new LinkedList<>();
