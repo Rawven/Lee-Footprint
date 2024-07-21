@@ -9,11 +9,33 @@ import java.util.PriorityQueue;
 
 public class c_滑动窗口最大值 {
 
-  public static void main(String[] args) {
-    maxSlidingWindow(new int[]{5, 4, 3, 6}, 4);
+  /**
+   * max sliding window 100ms做法
+   *
+   * @param nums nums
+   * @param k    k
+   * @return {@link int[]}
+   */
+  public static int[] maxSlidingWindow1(int[] nums, int k) {
+    PriorityQueue<int[]> queue = new PriorityQueue<>(
+        Comparator.comparingInt(o -> -o[0]));
+    int[] answer = new int[nums.length - k + 1];
+    int index = 0;
+    for (int i = 0; i < k; i++) {
+      queue.offer(new int[]{nums[i], i});
+    }
+    answer[index++] = (Objects.requireNonNull(queue.peek())[0]);
+    for (int i = k; i < nums.length; i++) {
+      queue.offer(new int[]{nums[i], i});
+      while (Objects.requireNonNull(queue.peek())[1] < i - k + 1) {
+        queue.poll();
+      }
+      answer[index++] = (Objects.requireNonNull(queue.peek())[0]);
+    }
+    return answer;
   }
 
-  public static int[] maxSlidingWindow(int[] nums, int k) {
+  public int[] maxSlidingWindow(int[] nums, int k) {
     //单调队列 存储下标
     Deque<Integer> deque = new LinkedList<>();
     int[] answer = new int[nums.length - k + 1];
@@ -37,32 +59,6 @@ public class c_滑动窗口最大值 {
         deque.pollFirst();
       }
       answer[index++] = nums[deque.peekFirst()];
-    }
-    return answer;
-  }
-
-  /**
-   * max sliding window 100ms做法
-   *
-   * @param nums nums
-   * @param k    k
-   * @return {@link int[]}
-   */
-  public static int[] maxSlidingWindow1(int[] nums, int k) {
-    PriorityQueue<int[]> queue = new PriorityQueue<>(
-        Comparator.comparingInt(o -> -o[0]));
-    int[] answer = new int[nums.length - k + 1];
-    int index = 0;
-    for (int i = 0; i < k; i++) {
-      queue.offer(new int[]{nums[i], i});
-    }
-    answer[index++] = (Objects.requireNonNull(queue.peek())[0]);
-    for (int i = k; i < nums.length; i++) {
-      queue.offer(new int[]{nums[i], i});
-      while (Objects.requireNonNull(queue.peek())[1] < i - k + 1) {
-        queue.poll();
-      }
-      answer[index++] = (Objects.requireNonNull(queue.peek())[0]);
     }
     return answer;
   }

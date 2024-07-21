@@ -1,8 +1,4 @@
-package main
-
-import (
-	_ "container/list"
-)
+package 二分查找
 
 func searchInsert(nums []int, target int) int {
 	left, right, mid := 0, len(nums)-1, 0
@@ -17,8 +13,4 @@ func searchInsert(nums []int, target int) int {
 		}
 	}
 	return left
-}
-
-func main() {
-	searchInsert([]int{1, 2, 3, 4, 5, 6, 7, 8, 9}, 3)
 }

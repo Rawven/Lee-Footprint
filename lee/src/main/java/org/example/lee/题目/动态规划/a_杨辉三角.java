@@ -5,11 +5,8 @@ import java.util.List;
 
 public class a_杨辉三角 {
 
-  public static void main(String[] args) {
-    generate(5);
-  }
 
-  public static List<List<Integer>> generate(int numRows) {
+  public List<List<Integer>> generate(int numRows) {
     List<List<Integer>> key = new ArrayList<>();
     key.add(new ArrayList<>() {{
       add(1);

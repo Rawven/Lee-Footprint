@@ -3,17 +3,16 @@ package org.example.lee.题目.回溯;
 public class c_解数独 {
 
 
-
   /**
    * solve sudoku 解数独 回溯 做过N皇后思路便很明确
    *
    * @param board board
    */
-  public  void solveSudoku(char[][] board) {
+  public void solveSudoku(char[][] board) {
     solution(board, 0, 0);
   }
 
-  public  boolean solution(char[][] board, int row, int columns) {
+  public boolean solution(char[][] board, int row, int columns) {
     if (row == 9) {
       return true;
     }
@@ -49,7 +48,7 @@ public class c_解数独 {
 
   }
 
-  public  boolean isValid(char[][] board, char key, int n, int row, int columns) {
+  public boolean isValid(char[][] board, char key, int n, int row, int columns) {
     for (int i = 0; i < n; i++) {
       if (board[row][i] == key) {
         return false;

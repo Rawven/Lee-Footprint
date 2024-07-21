@@ -2,7 +2,7 @@ package org.example.lee.题目.字典树;
 
 public class b_添加与搜索单词 {
 
-   class WordDictionary {
+  class WordDictionary {
 
     private Node root;
 

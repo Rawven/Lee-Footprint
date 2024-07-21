@@ -2,18 +2,7 @@ package org.example.lee.题目.其它;
 
 public class b_字符串相乘 {
 
-  public static void main(String[] args) {
-    multiply("2", "3");
-  }
-
-  /**
-   * 优化竖式  3ms 主要利用 i*j 位于的位置是 i+j与i+j+1
-   *
-   * @param num1 num1
-   * @param num2 num2
-   * @return {@link String}
-   */
-  public static String multiply(String num1, String num2) {
+  public String multiply(String num1, String num2) {
     int len = num2.length() + num1.length(), len1 = num1.length(), len2 = num2.length();
     int[] arr = new int[len];
     int tool = '0';

@@ -2,17 +2,7 @@ package org.example.lee.题目.动态规划;
 
 public class b_最长递增子串 {
 
-  public static void main(String[] args) {
-    lengthOfLIS(new int[]{10, 9, 2, 5, 3, 7, 101, 18});
-  }
-
-  /**
-   * length of lis
-   *
-   * @param nums nums
-   * @return int
-   */
-  public static int lengthOfLIS(int[] nums) {
+  public int lengthOfLIS(int[] nums) {
     //tails[i]记录当前子串的最小后缀
     int[] tails = new int[nums.length];
     int size = 0;

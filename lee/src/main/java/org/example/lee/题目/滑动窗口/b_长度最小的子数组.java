@@ -2,11 +2,7 @@ package org.example.lee.题目.滑动窗口;
 
 public class b_长度最小的子数组 {
 
-  public static void main(String[] args) {
-    minSubArrayLen(11, new int[]{1, 2, 3, 4, 5});
-  }
-
-  public static int minSubArrayLen(int target, int[] nums) {
+  public int minSubArrayLen(int target, int[] nums) {
     int len = nums.length, key = len + 1, num = 0, right = 0, left = 0, choice = 0;
     for (int i = 0; i < len; i++) {
       if (target <= num) {

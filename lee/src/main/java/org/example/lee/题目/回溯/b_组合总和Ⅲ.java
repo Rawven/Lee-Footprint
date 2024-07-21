@@ -5,17 +5,14 @@ import java.util.List;
 
 public class b_组合总和Ⅲ {
 
-  public static void main(String[] args) {
-    combinationSum3(9, 45);
-  }
 
-  static public List<List<Integer>> combinationSum3(int k, int n) {
+  public List<List<Integer>> combinationSum3(int k, int n) {
     List<List<Integer>> lists = new ArrayList<>();
     tool(lists, new ArrayList<>(), 0, 0, 0, k, n);
     return lists;
   }
 
-  static void tool(List<List<Integer>> lists, List<Integer> list, int help, int start, int now,
+  void tool(List<List<Integer>> lists, List<Integer> list, int help, int start, int now,
       int k, int n) {
     if (start != 0) {
       list.add(start);

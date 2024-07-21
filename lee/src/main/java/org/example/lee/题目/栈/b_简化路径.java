@@ -5,11 +5,8 @@ import java.util.Stack;
 
 public class b_简化路径 {
 
-  public static void main(String[] args) {
-    simplifyPath("/home/");
-  }
 
-  public static String simplifyPath(String path) {
+  public String simplifyPath(String path) {
     Stack<String> stack = new Stack<>();
     String[] split = path.split("/");
     int index = 0, save = 0;

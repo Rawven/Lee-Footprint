@@ -6,19 +6,6 @@ import java.util.List;
 
 public class b_全排列2 {
 
-  public static void main(String[] args) {
-    permuteUnique(new int[]{1, 1, 2});
-  }
-
-  static public List<List<Integer>> permuteUnique(int[] nums) {
-    List<List<Integer>> list = new ArrayList<>();
-    LinkedList<Integer> queue = new LinkedList<>();
-    for (int i : nums) {
-      queue.offer(i);
-    }
-    tool(queue, 0, list, new ArrayList<>(), nums.length);
-    return list;
-  }
 
   static void tool(LinkedList<Integer> queue, int start, List<List<Integer>> list,
       List<Integer> save, int len) {
@@ -38,5 +25,15 @@ public class b_全排列2 {
       save.remove(save.size() - 1);
       queue.offer(poll);
     }
+  }
+
+  public List<List<Integer>> permuteUnique(int[] nums) {
+    List<List<Integer>> list = new ArrayList<>();
+    LinkedList<Integer> queue = new LinkedList<>();
+    for (int i : nums) {
+      queue.offer(i);
+    }
+    tool(queue, 0, list, new ArrayList<>(), nums.length);
+    return list;
   }
 }

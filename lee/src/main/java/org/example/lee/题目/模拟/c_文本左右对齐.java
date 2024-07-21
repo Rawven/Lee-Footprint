@@ -5,13 +5,7 @@ import java.util.List;
 
 public class c_文本左右对齐 {
 
-  public static void main(String[] args) {
-    fullJustify(
-        new String[]{"Science", "is", "what", "we", "understand", "well", "enough", "to", "explain",
-            "to", "a", "computer.", "Art", "is", "everything", "else", "we", "do"}, 20);
-  }
-
-  public static List<String> fullJustify(String[] words, int maxWidth) {
+  public List<String> fullJustify(String[] words, int maxWidth) {
     ArrayList<String> list = new ArrayList<>();
     int save, index = 0, help, len = words.length, a, b, c, d;
     while (index < len) {

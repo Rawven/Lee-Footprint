@@ -11,17 +11,13 @@ import java.util.List;
  */
 public class b_组合 {
 
-  public static void main(String[] args) {
-    combine(4, 2);
-  }
-
-  public static List<List<Integer>> combine(int n, int k) {
+  public List<List<Integer>> combine(int n, int k) {
     List<List<Integer>> list = new ArrayList<>();
     tool(list, new ArrayList<>(), 1, n, k);
     return list;
   }
 
-  static void tool(List<List<Integer>> list, List<Integer> save, int start, int n, int k) {
+  void tool(List<List<Integer>> list, List<Integer> save, int start, int n, int k) {
     if (save.size() == k) {
       ArrayList<Integer> integers = new ArrayList<>(save);
       list.add(integers);

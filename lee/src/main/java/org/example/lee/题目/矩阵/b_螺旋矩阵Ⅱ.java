@@ -2,11 +2,7 @@ package org.example.lee.题目.矩阵;
 
 public class b_螺旋矩阵Ⅱ {
 
-  public static void main(String[] args) {
-    generateMatrix(3);
-  }
-
-  public static int[][] generateMatrix(int n) {
+  public int[][] generateMatrix(int n) {
     int[][] arr = new int[n][n];
     int num = 1, max = n * n, j = 0;
     while (num <= max) {

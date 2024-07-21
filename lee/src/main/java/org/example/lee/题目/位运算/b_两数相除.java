@@ -2,19 +2,8 @@ package org.example.lee.题目.位运算;
 
 public class b_两数相除 {
 
-  public static void main(String[] args) {
-    System.out.println(Integer.MIN_VALUE);
-  }
 
-
-  /**
-   * divide 逆天负数运算 绝妙避开溢出问题 位运算 牛逼
-   *
-   * @param dividend dividend
-   * @param divisor  divisor
-   * @return int
-   */
-  public static int divide(int dividend, int divisor) {
+  public int divide(int dividend, int divisor) {
     int result = 0;
     boolean bool = (dividend > 0) ^ (divisor > 0);
     if (dividend > 0) {

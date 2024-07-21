@@ -6,14 +6,6 @@ public class b_字符串解码 {
 
   public static int i = 0;
 
-  public static void main(String[] args) {
-    decodeString("3[a]2[bc]");
-  }
-
-  public static String decodeString(String s) {
-    return tool("1[" + s + "]");
-  }
-
   static String tool(String s) {
     Stack<Integer> stack = new Stack<>();
     StringBuilder save = new StringBuilder();
@@ -52,5 +44,9 @@ public class b_字符串解码 {
       }
     }
     return save.toString();
+  }
+
+  public String decodeString(String s) {
+    return tool("1[" + s + "]");
   }
 }

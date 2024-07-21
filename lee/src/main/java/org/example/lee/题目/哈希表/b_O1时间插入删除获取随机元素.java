@@ -6,17 +6,8 @@ import java.util.List;
 
 public class b_O1时间插入删除获取随机元素 {
 
-  public static void main(String[] args) {
-    RandomizedSet set = new RandomizedSet();
-    set.insert(0);
-    set.insert(1);
-    set.remove(0);
-    set.insert(2);
-    set.remove(1);
-    set.getRandom();
-  }
 
-  static class RandomizedSet {
+  class RandomizedSet {
 
     private HashMap<Integer, Integer> map;
     private List<Integer> list;
