@@ -9,12 +9,9 @@ package 链表
 // 代码模拟即可
 func detectCycle(head *ListNode) *ListNode {
 	a, b := head, head
-	for a != nil && b != nil && b.Next != nil {
+	for a != nil && b != nil && b.Next != nil && a != b {
 		a = a.Next
 		b = b.Next.Next
-		if a == b {
-			break
-		}
 	}
 	if a == nil || b == nil || b.Next == nil {
 		return nil

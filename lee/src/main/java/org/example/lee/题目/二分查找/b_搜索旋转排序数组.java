@@ -5,13 +5,6 @@ import java.util.Arrays;
 public class b_搜索旋转排序数组 {
 
 
-  /**
-   * search 要求 logN 二分法 然后找出有序的空间和无序的空间 有序则继续二分 无序则递归
-   *
-   * @param nums   nums
-   * @param target target
-   * @return int
-   */
   public static int search(int[] nums, int target) {
     int len = nums.length, mid, left = 0, right = len - 1, res1 = -1, res2 = -1;
     mid = (left + right) / 2;

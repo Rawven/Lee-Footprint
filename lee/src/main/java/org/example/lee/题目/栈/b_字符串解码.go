@@ -1,9 +1,6 @@
-package main
+package 栈
 
-import (
-	_ "container/list"
-	"strings"
-)
+import "strings"
 
 func decodeString(s string) string {
 	var arr strings.Builder
@@ -48,8 +45,4 @@ func isNumber(v byte) bool {
 func isDigest(v byte) bool {
 	return (v >= 'a' && v <= 'z') ||
 		(v >= 'A' && v <= 'Z')
-}
-
-func main() {
-	decodeString("3[a]2[bc]")
 }
