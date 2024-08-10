@@ -7,10 +7,6 @@ public class b_单词拆分 {
 
   /**
    * word break dp 记住前一状态  边界问题也要会处理
-   *
-   * @param s        s
-   * @param wordDict word dict
-   * @return boolean
    */
   public boolean wordBreak(String s, List<String> wordDict) {
     HashSet<String> set = new HashSet<>(wordDict);

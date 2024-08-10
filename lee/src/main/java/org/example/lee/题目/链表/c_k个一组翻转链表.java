@@ -1,4 +1,4 @@
-package org.example.lee.题目.递归;
+package org.example.lee.题目.链表;
 
 import org.example.lee.model.ListNode;
 

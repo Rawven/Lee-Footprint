@@ -7,6 +7,7 @@ public class a_找出字符串中第一个匹配项的下标 {
    * TODO
    * 生成部分匹配表（next数组），用于KMP算法。
    * 部分匹配表记录了每个字符位置的最长前缀长度。
+   *
    * @param s 模式字符串
    * @return 部分匹配表（next数组）
    */
@@ -38,8 +39,9 @@ public class a_找出字符串中第一个匹配项的下标 {
 
   /**
    * 在主字符串haystack中查找子字符串needle的位置。
+   *
    * @param haystack 主字符串
-   * @param needle 子字符串
+   * @param needle   子字符串
    * @return 子字符串在主字符串中的起始位置，如果未找到则返回-1
    */
   public static int strStr(String haystack, String needle) {

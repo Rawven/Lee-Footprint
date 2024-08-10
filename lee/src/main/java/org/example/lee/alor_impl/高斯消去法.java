@@ -1,4 +1,4 @@
-package org.example.lee.算法实现;
+package org.example.lee.alor_impl;
 
 public class 高斯消去法 {
 
