@@ -1,4 +1,4 @@
-package 算法实现
+package 二分查找
 
 // MinHeap 定义一个最小堆的数据结构
 type MinHeap struct {

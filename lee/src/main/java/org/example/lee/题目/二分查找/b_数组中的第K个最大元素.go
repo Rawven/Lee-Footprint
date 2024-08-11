@@ -1,33 +1,35 @@
 package 二分查找
 
 // 快速选择做法
-func findKthLargest0(nums []int, k int) int {
+
+func findKthLargest(nums []int, k int) int {
 	return partitionTool(nums, 0, len(nums)-1, len(nums)-k)
 }
 
 func partitionTool(arr []int, left, right, k int) int {
+	pivot := arr[left]
+	lt, i, gt := left, left, right
 
-	h := left
-	if h == k {
-		return arr[h]
-	}
-	s1, s2 := left, right
-	for left < right {
-		for left < right && arr[right] >= arr[h] {
-			right--
+	// 三路分区算法
+	for i <= gt {
+		if arr[i] < pivot {
+			arr[lt], arr[i] = arr[i], arr[lt]
+			lt++
+			i++
+		} else if arr[i] > pivot {
+			arr[gt], arr[i] = arr[i], arr[gt]
+			gt--
+		} else {
+			i++
 		}
-		for left < right && arr[left] <= arr[h] {
-			left++
-		}
-		arr[right], arr[left] = arr[left], arr[right]
 	}
-	arr[right], arr[h] = arr[h], arr[right]
-	if right > k {
-		return partitionTool(arr, s1, right-1, k)
-	} else if right < k {
-		return partitionTool(arr, right+1, s2, k)
+
+	if k >= lt && k <= gt {
+		return arr[lt]
+	} else if k < lt {
+		return partitionTool(arr, left, lt-1, k)
 	} else {
-		return arr[right]
+		return partitionTool(arr, gt+1, right, k)
 	}
 }
 
@@ -55,8 +57,8 @@ func (h *IntHeap) Pop() interface{} {
 	return x
 }
 
-func findKthLargest(nums []int, k int) int {
-	h := alor_impl.NewMinHeap()
+func findKthLargest1(nums []int, k int) int {
+	h := NewMinHeap()
 
 	for _, num := range nums {
 		h.Push(num)
