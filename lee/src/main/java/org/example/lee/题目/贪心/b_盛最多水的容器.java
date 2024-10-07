@@ -2,18 +2,20 @@ package org.example.lee.题目.贪心;
 
 public class b_盛最多水的容器 {
 
-  public int maxArea(int[] height) {
-    int left = 0, right = height.length - 1, max = 0;
-    //两边往里缩 哪边小哪边缩 贪心就完事了
-    while (left < right) {
-      max = Math.max(max, (right - left) * Math.min(height[left], height[right]));
-      if (height[left] > height[right]) {
-        right--;
-      } else {
-        left++;
-      }
-    }
-    return max;
-  }
+	public int maxArea(int[] height) {
+		int head = 0, end = height.length - 1;
+		int max = 0;
+		while (head < end) {
+			int a = height[head], b = height[end];
+			if (a > b) {
+				max = Math.max(max, b * (end - head));
+				end--;
+			} else {
+				max = Math.max(max, a * (end - head));
+				head++;
+			}
+		}
+		return max;
+	}
 
 }

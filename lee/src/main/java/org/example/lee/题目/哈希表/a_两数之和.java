@@ -10,15 +10,15 @@ import java.util.HashMap;
  */
 public class a_两数之和 {
 
-  public int[] twoSum(int[] nums, int target) {
-    //使用一个map存取k(值)v(值下标)
-    HashMap<Integer, Integer> map = new HashMap<>();
-    for (int i = 0; i < nums.length; i++) {
-      if (map.containsKey(target - nums[i])) {
-        return new int[]{i, map.get(target - nums[i])};
-      }
-      map.put(nums[i], i);
-    }
-    return null;
-  }
+	public int[] twoSum(int[] nums, int target) {
+		HashMap<Integer, Integer> map = new HashMap<>();
+		for (int i = 0; i < nums.length; i++) {
+			int n = nums[i];
+			if (map.containsKey(target - n)) {
+				return new int[]{i, map.get(target - n)};
+			}
+			map.put(n, i);
+		}
+		return new int[]{};
+	}
 }

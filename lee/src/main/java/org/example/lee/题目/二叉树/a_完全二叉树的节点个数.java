@@ -10,34 +10,34 @@ import org.example.lee.model.TreeNode;
  */
 public class a_完全二叉树的节点个数 {
 
-  public int num = 0;
+	public int num = 0;
 
-  public int countNodes(TreeNode root) {
-    fun(root);
-    return num;
-  }
+	public int countNodes(TreeNode root) {
+		fun(root);
+		return num;
+	}
 
-  void fun(TreeNode root) {
-    if (root == null) {
-      return;
-    }
-    int leftHe = tool(root.left);
-    int rightHe = tool(root.right);
-    if (leftHe == rightHe) {
-      num += (int) Math.pow(2, leftHe);
-      fun(root.right);
-    } else {
-      num += (int) Math.pow(2, rightHe);
-      fun(root.left);
-    }
-  }
+	void fun(TreeNode root) {
+		if (root == null) {
+			return;
+		}
+		int leftHe = tool(root.left);
+		int rightHe = tool(root.right);
+		if (leftHe == rightHe) {
+			num += (int) Math.pow(2, leftHe);
+			fun(root.right);
+		} else {
+			num += (int) Math.pow(2, rightHe);
+			fun(root.left);
+		}
+	}
 
-  int tool(TreeNode treeNode) {
-    int i = 0;
-    while (treeNode != null) {
-      treeNode = treeNode.left;
-      i++;
-    }
-    return i;
-  }
+	int tool(TreeNode treeNode) {
+		int i = 0;
+		while (treeNode != null) {
+			treeNode = treeNode.left;
+			i++;
+		}
+		return i;
+	}
 }

@@ -11,22 +11,22 @@ import java.util.List;
  */
 public class b_组合 {
 
-  public List<List<Integer>> combine(int n, int k) {
-    List<List<Integer>> list = new ArrayList<>();
-    tool(list, new ArrayList<>(), 1, n, k);
-    return list;
-  }
+	public List<List<Integer>> combine(int n, int k) {
+		List<List<Integer>> list = new ArrayList<>();
+		tool(list, new ArrayList<>(), 1, n, k);
+		return list;
+	}
 
-  void tool(List<List<Integer>> list, List<Integer> save, int start, int n, int k) {
-    if (save.size() == k) {
-      ArrayList<Integer> integers = new ArrayList<>(save);
-      list.add(integers);
-      return;
-    }
-    for (int i = start; i <= n; i++) {
-      save.add(i);
-      tool(list, save, i + 1, n, k);
-      save.remove(save.size() - 1);
-    }
-  }
+	void tool(List<List<Integer>> list, List<Integer> save, int start, int n, int k) {
+		if (save.size() == k) {
+			ArrayList<Integer> integers = new ArrayList<>(save);
+			list.add(integers);
+			return;
+		}
+		for (int i = start; i <= n; i++) {
+			save.add(i);
+			tool(list, save, i + 1, n, k);
+			save.remove(save.size() - 1);
+		}
+	}
 }

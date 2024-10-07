@@ -2,35 +2,29 @@ package org.example.lee.题目.二分查找;
 
 public class b_探索二维矩阵 {
 
-  public boolean searchMatrix(int[][] matrix, int target) {
-    if (matrix.length == 0) {
-      return false;
-    }
-    int len = matrix.length * matrix[0].length;
-    int i;
-    int left = 0, right = len;
-    while (left < right) {
-      i = (left + right) / 2;
-      int value = tool(matrix, i);
-      if (value == target) {
-        return true;
-      }
-      if (i == left || i == right) {
-        return false;
-      }
-      if (value > target) {
-        right = i;
-      } else {
-        left = i;
-      }
-    }
-    return false;
-  }
+	public boolean searchMatrix(int[][] matrix, int target) {
+		int m = matrix.length, n = matrix[0].length;
+		int length = m * n;
+		int left = 0, right = length - 1;
 
-  public int tool(int[][] matrix, int value) {
-    int b = matrix[0].length;
-    int i = value / b;
-    int j = value % b;
-    return matrix[i][j];
-  }
+		while (left <= right) {
+			int index = left + (right - left) / 2;
+			int result = getNum(matrix, index);
+			if (result == target) {
+				return true;
+			} else if (result > target) {
+				right = index - 1;
+			} else {
+				left = index + 1;
+			}
+		}
+		return false;
+	}
+
+	public int getNum(int[][] matrix, int index) {
+		int m = matrix.length, n = matrix[0].length;
+		int i = index / n;
+		int j = index % n;
+		return matrix[i][j];
+	}
 }

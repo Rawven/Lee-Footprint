@@ -4,20 +4,20 @@ import java.util.LinkedList;
 
 public class a_最近的请求次数 {
 
-  class RecentCounter {
+	class RecentCounter {
 
-    public LinkedList<Integer> list;
+		public LinkedList<Integer> list;
 
-    public RecentCounter() {
-      list = new LinkedList<>();
-    }
+		public RecentCounter() {
+			list = new LinkedList<>();
+		}
 
-    public int ping(int t) {
-      while (!list.isEmpty() && list.getFirst() < t - 3000) {
-        list.removeFirst();
-      }
-      list.addLast(t);
-      return list.size();
-    }
-  }
+		public int ping(int t) {
+			while (!list.isEmpty() && list.getFirst() < t - 3000) {
+				list.removeFirst();
+			}
+			list.addLast(t);
+			return list.size();
+		}
+	}
 }
