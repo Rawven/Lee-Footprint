@@ -1,47 +1,67 @@
 package org.example.lee.alor_impl;
 
 public class 快速排序 {
-
-	/* 选取三个元素的中位数 */
-	int medianThree(int[] nums, int left, int mid, int right) {
-		// 此处使用异或运算来简化代码
-		// 异或规则为 0 ^ 0 = 1 ^ 1 = 0, 0 ^ 1 = 1 ^ 0 = 1
-		if ((nums[left] < nums[mid]) ^ (nums[left] < nums[right])) {
-			return left;
-		} else if ((nums[mid] < nums[left]) ^ (nums[mid] < nums[right])) {
-			return mid;
-		} else {
-			return right;
-		}
+    public void qk(int[] nums){
+		quickSort(nums,0,nums.length-1);
 	}
 
-	public int partition(int[] nums, int left, int right) {
-		int med = medianThree(nums, left, (left + right) / 2, right);
-		int t = nums[med];
-		nums[med] = nums[left];
-		nums[left] = t;
+    public void quickSort(int[] nums,int left,int right){
+        int mark = partition(nums,left,right);
+		quickSort(nums,left,mark-1);
+		quickSort(nums,mark+1,right);
+	}
+
+	private int partition(int[] nums,int left,int right){
+		int mark = left;
 		int i = left, j = right;
-		while (i < j) {
-			while (i < j && nums[j] >= nums[left]) {
+		while(i < j){
+            while(i < j && nums[j]>=nums[mark]){
 				j--;
 			}
-			while (i < j && nums[i] <= nums[left]) {
+			while(i < j && nums[i]<=nums[mark]){
 				i++;
 			}
-			t = nums[i];
-			nums[i] = nums[j];
-			nums[j] = t;
-		}
-		return i;
+			swap(nums,i,j);
+		} 
+		swap(nums,mark,i);
+        return i;
 	}
 
-	public void qS(int[] nums, int left, int right) {
-		if (left >= right) {
-			return;
-		}
-		int pivot = partition(nums, left, right);
-		qS(nums, left, pivot - 1);
-		qS(nums, pivot + 1, right);
+	private void swap(int[] nums,int i ,int j){
+		int v = nums[i];
+		nums[i] = nums[j];
+		nums[j] = v;
 	}
+    
+	
+//	public void swap(int[] nums, int i, int j) {
+//		int t = nums[i];
+//		nums[i] = nums[j];
+//		nums[j] = t;
+//	}
+//
+//	public int partition(int[] nums, int left, int right) {
+//		int i = left, j = right,t;
+//		while (i < j) {
+//			while (i < j && nums[j] >= nums[left]) {
+//				j--;
+//			}
+//			while (i < j && nums[i] <= nums[left]) {
+//				i++;
+//			}
+//			swap(nums, i, j);
+//		}
+//		swap(nums, left, i);
+//		return i;
+//	}
+//
+//	public void qS(int[] nums, int left, int right) {
+//		if (left >= right) {
+//			return;
+//		}
+//		int pivot = partition(nums, left, right);
+//		qS(nums, left, pivot - 1);
+//		qS(nums, pivot + 1, right);
+//	}
 
 }

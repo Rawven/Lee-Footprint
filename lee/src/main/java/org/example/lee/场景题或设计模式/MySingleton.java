@@ -1,4 +1,4 @@
-package org.example.lee.面试;
+package org.example.lee.场景题或设计模式;
 
 public class MySingleton {
 
@@ -9,7 +9,7 @@ public class MySingleton {
 
 	public static MySingleton getInstance() {
 		if (instance == null) {
-			synchronized (MySingleton.instance) {
+			synchronized (MySingleton.class) {
 				if (instance == null) {
 					instance = new MySingleton();
 				}

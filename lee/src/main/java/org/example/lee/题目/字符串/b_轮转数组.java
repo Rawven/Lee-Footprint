@@ -9,19 +9,19 @@ public class b_轮转数组 {
 	 * @param k    k
 	 */
 	public void rotate(int[] nums, int k) {
-		int rk = k % nums.length;
-		tool(nums, 0, nums.length - 1);
-		tool(nums, 0, rk - 1);
-		tool(nums, rk, nums.length - 1);
+		k=k%nums.length;
+		toolToTurnAround(nums,0,nums.length-1);
+		toolToTurnAround(nums,0,k-1);
+		toolToTurnAround(nums,k,nums.length-1);
 	}
-
-	void tool(int[] nums, int s, int e) {
-		while (s < e) {
-			int i = nums[s];
-			nums[s] = nums[e];
-			nums[e] = i;
-			s++;
-			e--;
+	
+	void toolToTurnAround(int[] nums,int start,int end){
+		while (start < end){
+			int h = nums[start];
+			nums[start] = nums[end];
+			nums[end] = h;
+			start++;
+			end--;
 		}
 	}
 }

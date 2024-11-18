@@ -1,30 +1,42 @@
 package org.example.lee;
 
-import java.util.concurrent.locks.ReentrantLock;
-
 import lombok.extern.slf4j.Slf4j;
 
 @Slf4j
 public class Test {
+	class Solution {
+		int i;
 
-	public static int maxProduct(int[] nums) {
-		int[] dp = new int[nums.length];
-		int max = 0;
-		for (int i = 0; i < nums.length; i++) {
-			int help = 1;
-			for (int j = i; j >= 0; j--) {
-				help *= nums[i];
-				if (help > 0) {
-					dp[i] = Math.max(dp[i], help);
-				}
-			}
-			max = Math.max(max, dp[i]);
+		public String decodeString(String s) {
+			i = 0;
+			return tool(s);
 		}
-		return max;
-	}
 
-	public static void main(String[] args) {
-		maxProduct(new int[]{2, 3, -2, 4});
-	}
+		String tool(String s) {
+			StringBuilder sb = new StringBuilder();
+			StringBuilder result = new StringBuilder();
+			int multi = 0;
+			while (i < s.length()) {
+				char c = s.charAt(i);
+				if (isNumber(c)) {
+					multi = multi * 10 + (c - '0');
+				} else if (c == '[') {
+					sb.append(tool(s).repeat(multi));
+				} else {
+					result.append(sb);
+					if (s.charAt(i + 1) != '[') {
+						return result.toString();
+					} else {
+						sb = new StringBuilder();
+					}
+				}
+				i++;
+			}
+			return result.toString();
+		}
 
+		boolean isNumber(char c) {
+			return c >= '0' && c <= '9';
+		}
+	}
 }

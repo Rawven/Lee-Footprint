@@ -17,81 +17,88 @@ public class 堆 {
 	 *  ，父节点索引为(i-1)/2
 	 * （向下整除）。当索引越界时，表示空节点或节点不存在。
 	 */
+    class MyHeap {
+        List<Integer> list = new ArrayList<>();
 
-	private int left(int i) {
-		return 2 * i + 1;
-	}
+        public MyHeap() {
 
-	private int right(int i) {
-		return 2 * i + 2;
-	}
+        }
 
-	private int parent(int i) {
-		return (i - 1) / 2;
-	}
+        private int left(int index) {
+            return 2 * index + 1;
+        }
 
-	private void swap(int i, int j) {
-		int t = maxHeap.get(i);
-		maxHeap.set(i, maxHeap.get(j));
-		maxHeap.set(j, t);
-	}
+        private int right(int index) {
+            return 2 * index + 2;
+        }
 
-	public int peek() {
-		return maxHeap.get(0);
-	}
+        private int parent(int index) {
+            return (index - 1) / 2;
+        }
 
-	void offer(int i) {
-		maxHeap.add(i);
-		siftUp(maxHeap.size() - 1);
-	}
+        private void swap(int i1, int i2) {
+            int v1 = list.get(i1);
+            list.set(i1,list.get(i2));
+            list.set(i2,v1);
+        }
 
-	private void siftUp(int i) {
-		while (true) {
-			// 获取节点i 的父节点
-			int p = parent(i);
-			if (p < 0 || maxHeap.get(i) <= maxHeap.get(p)) {
-				break;
-			}
-			swap(i, p);
-			i = p;
-		}
-	}
+        private void upToDown(int index) {
+            while (true) {
+                int l = left(index), r = right(index), h = index;
+                if (l < list.size() && list.get(l) > list.get(h)) {
+                    h = l;
+                }
+                if (r < list.size() && list.get(r) > list.get(h)) {
+                    h = r;
+                }
+                if (h == index) {
+                    break;
+                }
+                swap(index,h);
+                index = h;
+            }
+        }
 
-	public int pop() {
-		if (maxHeap.isEmpty()) {
-			throw new RuntimeException("dd");
-		}
-		// 交换根节点与最右叶节点（交换首元素与尾元素）
-		swap(0, maxHeap.size() - 1);
-		// 删除节点
-		int val = maxHeap.remove(maxHeap.size() - 1);
-		// 从顶至底堆化
-		siftDown(0);
-		// 返回堆顶元素
-		return val;
-	}
+        private void downToUp(int index){
+            while(true){
+                int p = parent(index) , h = index;
+                if(p >= 0 && list.get(p) < list.get(h)){
+                     h = p ;
+                }
+                if(h == index){
+                    break;
+                }
+                swap(index,h);
+                index = h;
+            }
+        }
 
-	/* 从节点 i 开始，从顶至底堆化 */
-	private void siftDown(int i) {
-		while (true) {
-			int l = left(i), r = right(i), ma = i;
-			// 判断节点 i, l, r 中值最大的节点，记为 ma
-			if (l < maxHeap.size() && maxHeap.get(l) > maxHeap.get(ma)) {
-				ma = l;
-			}
-			if (r < maxHeap.size() && maxHeap.get(r) > maxHeap.get(ma)) {
-				ma = r;
-			}
-			// 若节点 i 最大或索引 l, r 越界，则无须继续堆化，跳出
-			if (ma == i) {
-				break;
-			}
-			// 交换两节点
-			swap(i, ma);
-			// 循环向下堆化
-			i = ma;
-		}
-	}
+		/**
+		 * 弹出 
+		 * 先将顶部与尾部替换,然后再自顶向下递归调整
+		 */
+		public int pop() {
+            int value = list.get(0);
+            swap(0, list.size() - 1);
+            list.remove(list.size() - 1);
+            upToDown(0);
+            return value;
+        }
+
+        public int peek() {
+            return list.get(0);
+        }
+
+		/**
+		 * 加入
+		 * 直接从尾部自底向上调整
+		 */
+		public void add(int value) {
+            list.add(value);
+            downToUp(list.size()-1);
+        }
+
+    }
 
 
 }

@@ -12,7 +12,7 @@ import org.springframework.test.context.junit4.SpringRunner;
  */
 @RunWith(SpringRunner.class)
 @SpringBootTest
-public class TTest {
+public class T线程交替打印 {
 
 	@org.junit.Test
 	public void test() {
