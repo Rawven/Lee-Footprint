@@ -13,7 +13,7 @@ var (
 	cond  = sync.NewCond(&lock)
 )
 
-func main() {
+func main12() {
 	go func() {
 		for count < max {
 			lock.Lock()
